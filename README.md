@@ -47,13 +47,11 @@ Project Description Here
 3. Step 3.
 
 ## Research and Planning Log:
+
 #### Friday, 7/7
-
 - 8:00am - 9:00am: Creating project repository and project proposal document
-- 9:00am - 9:
-
-
-
+- 9:00am - 10:00am: Kanban board task development and planning in Miro (https://miro.com/app/board/uXjVM3huH7k=/)
+- 10:30am - 12:00am: Researching Firebase/Firestore as a backend solution for DB (https://www.youtube.com/watch?v=jCY6DH8F4oc&ab_channel=PedroTech)
 
 
 
