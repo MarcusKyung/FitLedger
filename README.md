@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# _Capstone, Name TBD_
+<div align="center">
+    <!-- Project Shields -->
+    <div align="center">
+        <a href="https://github.com/MarcusKyung/capstone/graphs/contributors">
+            <img src="https://img.shields.io/github/contributors/MarcusKyung/capstone.svg?style=plastic">
+        </a>
+        ¨
+        <a href="https://github.com/MarcusKyung/Valtteri-BOTtas/stargazers">
+            <img src="https://img.shields.io/github/stars/MarcusKyung/capstone.svg?color=yellow&style=plastic">
+        </a>
+        ¨
+        <a href="https://github.com/MarcusKyung/Valtteri-BOTtas/issues">
+            <img src="https://img.shields.io/github/issues/MarcusKyung/capstone?style=plastic">
+        </a>
+        ¨
+        <a href="https://github.com/MarcusKyung/Valtteri-BOTtas/blob/main/license.txt">
+            <img src="https://img.shields.io/github/license/MarcusKyung/capstone?color=orange&style=plastic">
+        </a>
+        ¨
+        <a href="https://linkedin.com/in/MarcusKyung">
+            <img src="https://img.shields.io/badge/-LinkedIn-black.svg?style=plastic&logo=linkedin&colorB=2867B2">
+        </a>
+    </div>
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### By _**Marcus Kyung**_
 
-## Available Scripts
+#### _This health and exercise tracker aims to be a master repository for your stats._
 
-In the project directory, you can run:
+## Contents:
+* [Technologies Used](#technologies-used)
+* [Description](#description)
+* [Setup & installation](#setupinstallation-requirements)
+* [Known Bugs](#known-bugs)
+* [License](#license)
 
-### `npm start`
+## Technologies Used:
+* _JavaScript_
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Description:
+Project Description Here
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Setup/Installation Requirements:
+1. Step 1.
+2. Step 2.
+3. Step 3.
 
-### `npm test`
+## Research and Planning Log:
+#### Friday, 7/7
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- 8:00am - 9:00am: 
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Known Bugs:
+* _No known bugs as of x/xx/xx.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## License:
+_For questions, comments, or concerns please reach out at Kyungmj@gmail.com_
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## MIT License:
+Copyright (c) [2023] [Marcus Kyung]
