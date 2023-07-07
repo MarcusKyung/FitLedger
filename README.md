@@ -49,7 +49,8 @@ Project Description Here
 ## Research and Planning Log:
 #### Friday, 7/7
 
-- 8:00am - 9:00am: 
+- 8:00am - 9:00am: Creating project repository and project proposal document
+- 9:00am - 9:
 
 
 
