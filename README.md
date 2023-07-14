@@ -58,10 +58,11 @@ Project Description Here
 - 9:00am - 10:00am: Kanban board task development and planning in Miro (https://miro.com/app/board/uXjVM3huH7k=/)
 - 10:30am - 12:00pm: Researching Firebase/Firestore as a backend solution for DB (https://www.youtube.com/watch?v=jCY6DH8F4oc&ab_channel=PedroTech)
 - 1:00pm - 3:00pm: Researching using React with Firebase via LHTP/YT/Firebase Docs
-- 3:00pm - 5:00pm: Researching and experiemt with using Tailwind CSS and Flowbite in React Apps via YT and Tailwind Docs, set up Prettier/Tailwind CSS plugins
+- 3:00pm - 5:00pm: Researching and experiment with using Tailwind CSS and Flowbite in React Apps via YT and Tailwind Docs, set up Prettier/Tailwind CSS plugins
 
 #### Friday, 7/14
 - 2:10pm-2:30pm: Researching Nivo.Rocks for data visualization components
+- 2:30pm-3:30pm: Testing Victory React Charts for data visualization components
 
 
 
