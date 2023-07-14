@@ -64,7 +64,12 @@ function ReusableForm(props) {
         <input type='number' name='exercise5Weight' placeholder='Exercise 5 Weight' />
         <input type='text' name='exercise5Notes' placeholder='Exercise 5 Notes' />
 
-        <input type='text' name='cardioName' placeholder='Cardio Name' />
+        <select name="cardioName">
+          <option value="" disabled selected>Select Cardio Type</option>
+          <option value="Run/Walk">Run/Walk</option>
+          <option value="Cycling">Cycling</option>
+          <option value="Stairmaster">Stairmaster</option>
+        </select>        
         <input type='number' name='cardioDuration' placeholder='Cardio Duration' />
         <input type='number' name='cardioDistance' placeholder='Cardio Distance' />
         <input type='text' name='cardioNote' placeholder='Cardio Note' />
