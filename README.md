@@ -60,6 +60,10 @@ Project Description Here
 - 1:00pm - 3:00pm: Researching using React with Firebase via LHTP/YT/Firebase Docs
 - 3:00pm - 5:00pm: Researching and experiemt with using Tailwind CSS and Flowbite in React Apps via YT and Tailwind Docs, set up Prettier/Tailwind CSS plugins
 
+#### Friday, 7/14
+- 2:10pm-2:30pm: Researching Nivo.Rocks for data visualization components
+
+
 
 
 ## Known Bugs:
