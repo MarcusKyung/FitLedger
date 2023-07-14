@@ -1,7 +1,119 @@
-import React from 'react'
+import React, { useState } from "react";
+import { auth } from "./../firebase.js";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, } from "firebase/auth";
+import Card from 'react-bootstrap/Card';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
+import Form from "react-bootstrap/Form";
 
-export default function Signin() {
+function SignIn() {
+  const [signUpSuccess, setSignUpSuccess] = useState(null);
+  const [signInSuccess, setSignInSuccess] = useState(null);
+  const [signOutSuccess, setSignOutSuccess] = useState(null);
+
+  function doSignUp(event) {
+    event.preventDefault(); 
+    const email = event.target.email.value; 
+    const password = event.target.password.value;
+    const confirmPassword = event.target.confirmPassword.value;
+
+    if (password !== confirmPassword) {
+      setSignUpSuccess("Passwords do not match!");
+      return;
+    }
+
+    createUserWithEmailAndPassword(auth, email, password) 
+      .then((userCredential) => {
+        setSignUpSuccess(
+          `You've successfully signed up, ${userCredential.user.email}!`
+        ); l
+      })
+      .catch((error) => { 
+        setSignUpSuccess(`There was an error signing up: ${error.message}!`);
+      });
+  }
+
+  function doSignIn(event) {
+    event.preventDefault();
+    const email = event.target.signinEmail.value;
+    const password = event.target.signinPassword.value;
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        setSignInSuccess(
+          `You've successfully signed in as ${userCredential.user.email}!`
+        );
+      })
+      .catch((error) => {
+        setSignInSuccess(`There was an error signing in: ${error.message}!`);
+      });
+  }
+
+  function doSignOut() {
+    signOut(auth)
+      .then(function () {
+        setSignOutSuccess("You have successfully signed out!");
+      })
+      .catch(function (error) {
+        setSignOutSuccess(`There was an error signing out: ${error.message}!`);
+      });
+  }
+
   return (
-    <div>Signin</div>
-  )
+    <React.Fragment>
+      <Row>
+        <Col />
+        <Col>
+          <Card>
+            <Card.Header><h1>Sign up</h1></Card.Header>
+            <Card.Body>
+              {signUpSuccess}
+              <Form onSubmit={doSignUp}>
+                <Form.Group>
+                  <Form.Label>Email Address:</Form.Label>
+                  <Form.Control type="text" name="email" placeholder="Email" />
+                  <Form.Label>Password:</Form.Label>
+                  <Form.Control type="password" name="password" placeholder="Password" />
+                  <Form.Label>Password Confirmation:</Form.Label>
+                  <Form.Control type="password" name="confirmPassword" placeholder="Password Confirmation" />
+                </Form.Group>
+                <br />
+                <Button variant="primary" type="submit">Sign Up</Button>
+              </Form>
+            </Card.Body>  
+          </Card>
+          <br />
+          <Card>
+            <Card.Header><h1>Sign In</h1></Card.Header>
+            <Card.Body>
+              {signInSuccess}
+              <Form onSubmit={doSignIn}>
+                <Form.Group>
+                  <Form.Label>Email Address:</Form.Label>
+                  <Form.Control type="text" name="signinEmail" placeholder="Email" />
+                  <Form.Label>Password:</Form.Label>
+                  <Form.Control type="password" name="signinPassword" placeholder="Password" />
+                  <br />
+                  <Button variant="primary" type="submit">Sign In</Button>
+                </Form.Group>
+              </Form>
+            </Card.Body>
+          </Card>
+          <br />
+          <Card>
+            <Card.Header><h1>Sign Out</h1></Card.Header>
+            <Card.Body>
+              {signOutSuccess}
+              <Button variant="primary" onClick={doSignOut}>Sign Out</Button>
+            </Card.Body>
+
+          </Card>
+        </Col>
+        <Col />
+      </Row>
+    </React.Fragment>
+  );
 }
+
+export default SignIn;
+
