@@ -10,9 +10,9 @@ import { auth } from "../firebase";
 export default function Header() {
   return (
     <React.Fragment>
-      <Navbar expand="lg" className="bg-body-tertiary">
+      {/* <Navbar expand="lg" className="bg-body-tertiary">
         <Container>
-          <Navbar.Brand>Epicodus Help Queue</Navbar.Brand>
+          <Navbar.Brand>TITLE</Navbar.Brand>
             <Nav className="ms-auto">
             <Navbar.Text className="ml-3">
               {props.currentUser ? (`Currently Signed in: ${props.currentUser.email}`) : ("Not Signed in")}
@@ -21,6 +21,6 @@ export default function Header() {
             <Button style={{ marginLeft: "1rem", }} variant="outline-primary"><Link to="/">Home</Link></Button>
             </Nav>
         </Container>
-      </Navbar>
+      </Navbar> */}
     </React.Fragment>  )
 }

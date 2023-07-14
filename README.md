@@ -54,12 +54,13 @@ Project Description Here
 ## Research and Planning Log:
 
 #### Friday, 7/7
-
 - 8:00am - 9:00am: Creating project repository and project proposal document
 - 9:00am - 10:00am: Kanban board task development and planning in Miro (https://miro.com/app/board/uXjVM3huH7k=/)
 - 10:30am - 12:00pm: Researching Firebase/Firestore as a backend solution for DB (https://www.youtube.com/watch?v=jCY6DH8F4oc&ab_channel=PedroTech)
 - 1:00pm - 3:00pm: Researching using React with Firebase via LHTP/YT/Firebase Docs
 - 3:00pm - 5:00pm: Researching and experiemt with using Tailwind CSS and Flowbite in React Apps via YT and Tailwind Docs, set up Prettier/Tailwind CSS plugins
+
+
 
 ## Known Bugs:
 
