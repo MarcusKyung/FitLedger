@@ -3,9 +3,11 @@ import PropTypes from "prop-types";
 
 function Data(props){
 
+
+  //cut this list down to disply overview in DataList
   return (
     <React.Fragment>
-      <div onClick = {() => props.whenDataClicked(props.id)}>
+      <div onClick = {() => props.whenDataClicked(props.id)}> 
         <h1>{props.entryDate}</h1>
         <h2>Nutrition Data</h2>
           <h3>Food:</h3>
@@ -61,7 +63,7 @@ function Data(props){
               <p>{props.exercise5Reps} Reps</p>
               <p>{props.exercise5Weight} lbs</p>
               <p>{props.exercise5Note}</p>
-          <h3>Resistance Training:</h3>
+          <h3>Cardio:</h3>
             <p>{props.cardioName}</p>
             <p>{props.cardioDuration}</p>
             <p>{props.cardioDistance}</p>

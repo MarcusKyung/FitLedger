@@ -6,32 +6,32 @@ export default function DataList() {
   return (
     <React.Fragment>
       <hr/>
-      {props.dataList.map((data) =>
+      {props.dataList.map((data) => 
         <Data 
           whenDataClicked={props.onDataSelection}
           entryDate={data.entryDate}
-          // meal1Name={data.meal1Name}
-          // meal1Calories={data.meal1Calories} 
-          // meal1Protein={data.meal1Protein}
-          // meal1Carbs={data.meal1Carbs}
-          // meal1Fats={data.meal1Fats}
-          // meal2Name={data.meal2Name}
-          // meal2Calories={data.meal2Calories}
-          // meal2Protein={data.meal2Protein}
-          // meal2Carbs={data.meal2Carbs}
-          // meal2Fats={data.meal2Fats}
-          // meal3Name={data.meal3Name}
-          // meal3Calories={data.meal3Calories}
-          // meal3Protein={data.meal3Protein}
-          // meal3Carbs={data.meal3Carbs}
-          // meal3Fats={data.meal3Fats}
-          // waterIntake={data.waterIntake}
-          // supplement1Name={data.supplement1Name}
-          // supplement1Amount={data.supplement1Amount}
-          // supplement2Name={data.supplement2Name}
-          // supplement2Amount={data.supplement2Amount}
-          // supplement3Name={data.supplement3Name}
-          // supplement3Amount={data.supplement3Amount}
+          meal1Name={data.meal1Name}
+          meal1Calories={data.meal1Calories} 
+          meal1Protein={data.meal1Protein}
+          meal1Carbs={data.meal1Carbs}
+          meal1Fats={data.meal1Fats}
+          meal2Name={data.meal2Name}
+          meal2Calories={data.meal2Calories}
+          meal2Protein={data.meal2Protein}
+          meal2Carbs={data.meal2Carbs}
+          meal2Fats={data.meal2Fats}
+          meal3Name={data.meal3Name}
+          meal3Calories={data.meal3Calories}
+          meal3Protein={data.meal3Protein}
+          meal3Carbs={data.meal3Carbs}
+          meal3Fats={data.meal3Fats}
+          waterIntake={data.waterIntake}
+          supplement1Name={data.supplement1Name}
+          supplement1Amount={data.supplement1Amount}
+          supplement2Name={data.supplement2Name}
+          supplement2Amount={data.supplement2Amount}
+          supplement3Name={data.supplement3Name}
+          supplement3Amount={data.supplement3Amount}
           exercise1Name={data.exercise1Name}
           exercise1Sets={data.exercise1Sets}
           exercise1Reps={data.exercise1Reps}
