@@ -64,7 +64,8 @@ Project Description Here
 - 2:10pm-2:30pm: Researching Nivo.Rocks for data visualization components
 - 2:30pm-3:30pm: Testing Victory React Charts for data visualization components
 
-
+#### Sunday, 7/16
+- 11:30am-12:00pm: Researching quote APIs for daily quotes
 
 
 ## Known Bugs:
