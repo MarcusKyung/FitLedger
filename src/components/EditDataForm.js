@@ -80,7 +80,7 @@ const { data } = props;
   );
 }
 
-NewDataForm.propTypes = {
+EditDataForm.propTypes = {
   onEditData: PropTypes.func,
   data: PropTypes.object
 };

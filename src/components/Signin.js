@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { auth } from "./../firebase.js";
+import { auth } from "../firebase.js";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, } from "firebase/auth";
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
@@ -27,7 +27,7 @@ function SignIn() {
       .then((userCredential) => {
         setSignUpSuccess(
           `You've successfully signed up, ${userCredential.user.email}!`
-        ); l
+        );
       })
       .catch((error) => { 
         setSignUpSuccess(`There was an error signing up: ${error.message}!`);
