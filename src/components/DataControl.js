@@ -103,9 +103,20 @@ function DataControl() {
     return () => unSubscribe;
   }, [auth.currentUser]);
 
+  const handleClick = () => {
+    if (selectedData != null) {
+      setFormVisibleOnPage(false);
+      setSelectedData(null);
+      setEditing(false);
+    } else {
+      setFormVisibleOnPage(!formVisibleOnPage); 
+    }
+  };
 
-
-
+  const handleDeletingData = async (id) => {
+    await deleteDoc(doc(db, "data", id));
+    setSelectedData(null);
+  };
 
 
   if (auth.currentUser == null) {
@@ -114,7 +125,7 @@ function DataControl() {
         <Row>
           <Col />
           <Col>
-            <h1 style={{ color: "red" , marginTop: "1em"}}>You must be signed in to access the queue!</h1>
+            <h1 style={{ color: "red" , marginTop: "1em"}}>You must be signed in to access entry data</h1>
           </Col>
           <Col />
         </Row>
