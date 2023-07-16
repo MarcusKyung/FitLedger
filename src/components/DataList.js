@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from "prop-types";
 import Data from "./Data";
 
-export default function DataList() {
+export default function DataList(props) {
   return (
     <React.Fragment>
       <hr/>
