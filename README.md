@@ -66,6 +66,7 @@ Project Description Here
 
 #### Sunday, 7/16
 - 11:30am-12:00pm: Researching quote APIs for daily quotes
+- 12:00pm-12:30pm: Researching API call techniques in React
 
 
 ## Known Bugs:
