@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import NewDataForm from './NewDataForm'
 import DataList from './DataList'
-import DataDetail from './DataDetail'
+import DataDetails from './DataDetails'
 import EditDataForm from './EditDataForm'
 import { db, auth } from "./../firebase.js";
 import { collection, addDoc, doc, updateDoc, onSnapshot, deleteDoc, query, where, orderBy } from "firebase/firestore"; //Import Firestore helper functions
 // import { formatDistanceToNow } from 'date-fns';
+import { Row, Col, Button, ButtonGroup } from 'react-bootstrap';
 
 function DataControl() {
   const [formVisibleOnPage, setFormVisibleOnPage] = useState(false);
@@ -118,6 +119,28 @@ function DataControl() {
     setSelectedData(null);
   };
 
+  const handleEditClick = () => {
+    setEditing(true);
+  };
+
+  const handleEditingDataInList = async (dataToEdit) => {
+    const dataRef = doc(db, "data", dataToEdit.id); 
+    await updateDoc(dataRef, dataToEdit); 
+    setEditing(false);
+    setSelectedData(null);
+  };
+
+  const handleAddingNewDataToList = async (newDataEntry) => {
+    newDataEntry.author = auth.currentUser.email;
+    await addDoc(collection(db, "data"), newDataEntry); 
+    setFormVisibleOnPage(false); 
+  };
+
+  const handleChangingSelectedData = (id) => {
+    const selection = mainDataList.filter((data) => data.id === id)[0];
+    setSelectedData(selection);
+  };
+
 
   if (auth.currentUser == null) {
     return (
@@ -125,7 +148,7 @@ function DataControl() {
         <Row>
           <Col />
           <Col>
-            <h1 style={{ color: "red" , marginTop: "1em"}}>You must be signed in to access entry data</h1>
+            <h1 style={{ color: "red" , marginTop: "1em"}}>You must be signed in to access entries</h1>
           </Col>
           <Col />
         </Row>
@@ -135,16 +158,49 @@ function DataControl() {
     let currentlyVisibleState = null;
     let buttonText = null;
 
-  return (
-    <React.Fragment>
-      {currentlyVisibleState}
-      <ButtonGroup>
-        {error ? null : <Button variant="primary" onClick={handleClick}>{buttonText}</Button>}
-      </ButtonGroup>
-    </React.Fragment>
+    if (error) {
+      currentlyVisibleState = <p>There was an error: {error}</p>; 
+    } else if (editing) {
+      currentlyVisibleState = (
+        <EditDataForm
+          data={selectedData}
+          onEditData={handleEditingDataInList}
+        />
+      );
+      buttonText = "Return to Entry List";
+    } else if (selectedData != null) {
+      currentlyVisibleState = (
+        <DataDetails
+          data={selectedData}
+          onClickingDelete={handleDeletingData}
+          onClickingEdit={handleEditClick}
+        />
+      );
+      buttonText = "Return to entry List";
+    } else if (formVisibleOnPage) {
+      currentlyVisibleState = (
+        <NewDataForm onNewDataCreation={handleAddingNewDataToList} />
+      );
+      buttonText = "Return to entry List";
+    } else {
+      currentlyVisibleState = (
+        <DataList
+          onDataSelection={handleChangingSelectedData}
+          dataList={mainDataList}
+        />
+      );
+      buttonText = "Add Data Entry";
+    }
+
+    return (
+      <React.Fragment>
+        {currentlyVisibleState}
+        <ButtonGroup>
+          {error ? null : <Button variant="primary" onClick={handleClick}>{buttonText}</Button>}
+        </ButtonGroup>
+      </React.Fragment>
     );
   }
 }
 
 export default DataControl;
-
