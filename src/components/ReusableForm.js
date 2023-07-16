@@ -1,38 +1,55 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Form from "react-bootstrap/Form";
 
 function ReusableForm(props) {
   return (
     <React.Fragment>
-      <form onSubmit={props.formSubmissionHandler}>
-        <input type='text' name='names' placeholder='Meal 1 Name' />
-        <input type='number' name='meal1Calories' placeholder='Meal 1 Calories' />
-        <input type='number' name='meal1Protein' placeholder='Meal 1 Protein' />
-        <input type='number' name='meal1Carbs' placeholder='Meal 1 Carbs' />
-        <input type='number' name='meal1Fats' placeholder='Meal 1 Fats' />
+      <Form onSubmit={props.formSubmissionHandler}>
+        <Form.Group className="mb-3" controlId="formMeal1Data">
+          <Form.Control type="text" placeholder="Meal 1 Name" />
+          <Form.Control type="number" placeholder="Meal 1 Calories (cal)" />
+          <Form.Control type="number" placeholder="Meal 1 Protein (g)" />
+          <Form.Control type="number" placeholder="Meal 1 Carbs (g)" />
+          <Form.Control type="number" placeholder="Meal 1 Fats (g)" />
+        </Form.Group>
 
-        <input type='text' name='names' placeholder='Meal 2 Name' />
-        <input type='number' name='meal2Calories' placeholder='Meal 2 Calories' />
-        <input type='number' name='meal2Protein' placeholder='Meal 2 Protein' />
-        <input type='number' name='meal2Carbs' placeholder='Meal 2 Carbs' />
-        <input type='number' name='meal2Fats' placeholder='Meal 2 Fats' />
+        <Form.Group className="mb-3" controlId="formMeal2Data">
+          <Form.Control type="text" placeholder="Meal 1 Name" />
+          <Form.Control type="number" placeholder="Meal 2 Calories (cal)" />
+          <Form.Control type="number" placeholder="Meal 2 Protein (g)" />
+          <Form.Control type="number" placeholder="Meal 2 Carbs (g)" />
+          <Form.Control type="number" placeholder="Meal 2 Fats (g)" />
+        </Form.Group>
 
-        <input type='text' name='names' placeholder='Meal 3 Name' />
-        <input type='number' name='meal3Calories' placeholder='Meal 3 Calories' />
-        <input type='number' name='meal3Protein' placeholder='Meal 3 Protein' />
-        <input type='number' name='meal3Carbs' placeholder='Meal 3 Carbs' />
-        <input type='number' name='meal3Fats' placeholder='Meal 3 Fats' />
+        <Form.Group className="mb-3" controlId="formMeal3Data">
+          <Form.Control type="text" placeholder="Meal 3 Name" />
+          <Form.Control type="number" placeholder="Meal 3 Calories (cal)" />
+          <Form.Control type="number" placeholder="Meal 3 Protein (g)" />
+          <Form.Control type="number" placeholder="Meal 3 Carbs (g)" />
+          <Form.Control type="number" placeholder="Meal 3 Fats (g)" />
+        </Form.Group>
 
-        <input type='number' name='waterIntake' placeholder='Water Intake' />
+        <Form.Group className="mb-3" controlId="formWaterIntakeData">
+          <Form.Control type="number" placeholder="Daily Water Intake (oz)" />
+        </Form.Group>
 
-        <input type='text' name='supplement1Name' placeholder='Supplement 1 Name' />
-        <input type='number' name='supplement1Amount' placeholder='Supplement 1 Amount' />
+        <Form.Group className="mb-3" controlId="formSupplement1Data">
+          <Form.Control type="text" placeholder="Supplement 1 Name" />
+          <Form.Control type="number" placeholder="Supplement 1 Amount (mg)" />
+        </Form.Group>
 
-        <input type='text' name='supplement2Name' placeholder='Supplement 2 Name' />
-        <input type='number' name='supplement1Amount' placeholder='Supplement 2 Amount' />
+        <Form.Group className="mb-3" controlId="formSupplement2Data">
+          <Form.Control type="text" placeholder="Supplement 2 Name" />
+          <Form.Control type="number" placeholder="Supplement 2 Amount (mg)" />
+        </Form.Group>
 
-        <input type='text' name='supplement3Name' placeholder='Supplement 3 Name' />
-        <input type='number' name='supplement3Amount' placeholder='Supplement 3 Amount' />
+        <Form.Group className="mb-3" controlId="formSupplement2Data">
+          <Form.Control type="text" placeholder="Supplement 2 Name" />
+          <Form.Control type="number" placeholder="Supplement 2 Amount (mg)" />
+        </Form.Group>
+
+        <hr />
 
         <input type='text' name='exercise1Name' placeholder='Exercise 1 Name' />
         <input type='number' name='exercise1Sets' placeholder='Exercise 1 Sets' />
@@ -67,21 +84,26 @@ function ReusableForm(props) {
         <select name="cardioName">
           <option value="" disabled selected>Select Cardio Type</option>
           <option value="Run/Walk">Run/Walk</option>
+          <option value="Elliptical">Elliptical</option>
           <option value="Cycling">Cycling</option>
           <option value="Stairmaster">Stairmaster</option>
+          <option value="Swim">Swim</option>
         </select>        
         <input type='number' name='cardioDuration' placeholder='Cardio Duration' />
         <input type='number' name='cardioDistance' placeholder='Cardio Distance' />
         <input type='text' name='cardioNote' placeholder='Cardio Note' />
 
+        <hr />
+
         <input type='time' name='sleepTime' placeholder='Sleep Time' />
         <input type='time' name='wakeTime' placeholder='Wake Time' />
         <input type='text' name='sleepDescription' placeholder='Sleep Quality Description' />
+        <input type='number' name='sleepScore' placeholder='Sleep Score 1-10' min="1" max="10" />
 
         <input type='number' name='dailyWeight' placeholder='Daily Weight (lbs)' />
 
         <button type='submit'>{props.buttonText}</button>
-      </form>
+      </Form>
     </React.Fragment>
   );
 }

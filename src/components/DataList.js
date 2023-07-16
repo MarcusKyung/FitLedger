@@ -64,6 +64,7 @@ export default function DataList() {
           sleepTime={data.sleepTime}
           wakeTime={data.wakeTime}
           sleepDescription={data.sleepDescription}
+          sleepScore={data.sleepScore}
           dailyWeight={data.dailyWeight}
           id={data.id}
           key={data.id}/>
