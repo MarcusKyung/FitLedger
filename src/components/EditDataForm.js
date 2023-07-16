@@ -65,6 +65,7 @@ const { data } = props;
       sleepDescription: event.target.sleepDescription.value,
       sleepScore: event.target.sleepScore.value,
       dailyWeight: parseInt(event.target.dailyWeight.value),
+      dailyStatus: event.target.dailyStatus.value,
 
       id: data.id
     });

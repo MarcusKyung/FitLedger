@@ -102,6 +102,12 @@ function ReusableForm(props) {
         </Form.Group>
         <Form.Group className="mb-3" controlId="formSleepData">
           <Form.Control type="number" placeholder="Daily Weight (lbs)" />
+          <Form.Select>
+            <option value="" disabled selected>Select Daily Status</option>
+            <option value="Healthy">Healthy</option>
+            <option value="Tired">Tired</option>
+            <option value="Sick">Sick</option>
+          </Form.Select>
         </Form.Group>
         <Button type='submit'>{props.buttonText}</Button>
       </Form>
