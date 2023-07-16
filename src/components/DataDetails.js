@@ -1,8 +1,6 @@
 import React from 'react'
 import { Container, Card, CardGroup, Accordion } from 'react-bootstrap'
 
-//condense info using accordion component
-
 export default function DataDetails(props) {
 const { data, onClickingDelete, onClickingEdit } = props;
 
@@ -128,12 +126,20 @@ const { data, onClickingDelete, onClickingEdit } = props;
           </Card>
           <Card>
             <Card.Body>
-              <Card.Title>Card title</Card.Title>
+              <Card.Title>Recovery Data</Card.Title>
               <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
               <Card.Text>
-                This is a wider card with supporting text below as a natural lead-in
-                to additional content. This card has even longer content than the
-                first to show that equal height action.
+              <Accordion defaultActiveKey={['0']} alwaysOpen>
+                <Accordion.Item eventKey="0">
+                  <Accordion.Header>Sleep Data:</Accordion.Header>
+                  <Accordion.Body>
+                    <p>{props.sleepTime} Reps</p>
+                    <p>{props.wakeTime} lbs</p>
+                    <p>{props.sleepDescription}</p>
+                    <p>{props.sleepScore}</p>
+                  </Accordion.Body>
+                </Accordion.Item>
+              </Accordion>
               </Card.Text>
             </Card.Body>
             <Card.Footer>
@@ -142,6 +148,21 @@ const { data, onClickingDelete, onClickingEdit } = props;
           </Card>
         </CardGroup>
       </Container>
+      <Card>
+        <Card.Body>
+          <Card.Title>Health Data</Card.Title>
+          <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+          <Card.Text>
+            <p>{props.dailyWeight}</p>
+            <p>{props.dailyStatus}</p>
+          </Card.Text>
+        </Card.Body>
+        <Card.Footer>
+          {/* <small className="text-muted">Last updated 3 mins ago</small> */}
+        </Card.Footer>
+      </Card>
+      <Button onClick={onClickingEdit} variant="primary" size="lg" block>Update Data</Button>
+      <Button onClick={() => onClickingDelete(ticket.id)} variant="danger" size="lg" block>Delete Data Entry</Button>
     </React.Fragment>
   )
 }
