@@ -6,7 +6,8 @@ export default function DataDetails(props) {
   const { data, onClickingDelete, onClickingEdit } = props;
 
   // Fix this: thecodeforge.io/post/quickly-fix-validatedomnesting-div-cannot-appear-as-a-descendant-of-p-tag-error
-
+  //Issue persists
+  
   return (
     <React.Fragment>
       <Container>
@@ -65,7 +66,6 @@ export default function DataDetails(props) {
               </Accordion>
             </Card.Body>
             <Card.Footer>
-              <p>Footer text here</p>
             </Card.Footer>
           </Card>
 
@@ -154,8 +154,8 @@ export default function DataDetails(props) {
             </Card.Footer>
           </Card>
         </CardGroup>
-
-        <Card>
+        
+        <Card style={{marginTop: "10px"}}>
           <Card.Body>
             <Card.Title>Health Data</Card.Title>
             <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
@@ -169,7 +169,7 @@ export default function DataDetails(props) {
           </Card.Footer>
         </Card>
 
-        <div className="d-grid gap-2">
+        <div style={{marginTop: "10px"}} className="d-grid gap-2">
           <Button onClick={onClickingEdit} variant="primary" size="lg">
             Update Data
           </Button>

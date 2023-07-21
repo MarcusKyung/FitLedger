@@ -7,12 +7,12 @@ import Navbar from 'react-bootstrap/Navbar';
 import { auth } from "../firebase";
 
 
-export default function Header() {
+function Header(props) {
   return (
     <React.Fragment>
-      {/* <Navbar expand="lg" className="bg-body-tertiary">
+      <Navbar expand="lg" className="bg-body-tertiary">
         <Container>
-          <Navbar.Brand>TITLE</Navbar.Brand>
+          <Navbar.Brand>Project Title</Navbar.Brand>
             <Nav className="ms-auto">
             <Navbar.Text className="ml-3">
               {props.currentUser ? (`Currently Signed in: ${props.currentUser.email}`) : ("Not Signed in")}
@@ -21,6 +21,9 @@ export default function Header() {
             <Button style={{ marginLeft: "1rem", }} variant="outline-primary"><Link to="/">Home</Link></Button>
             </Nav>
         </Container>
-      </Navbar> */}
-    </React.Fragment>  )
+      </Navbar>
+    </React.Fragment>
+  );
 }
+
+export default Header;

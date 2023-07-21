@@ -85,7 +85,7 @@ function DataControl() {
               cardioNotes: doc.data().cardioNotes,
             sleepTime: doc.data().sleepTime,
             wakeTime: doc.data().wakeTime,
-            sleepDescription: doc.data().sleepDescription,
+            sleepQuality: doc.data().sleepQuality,
             sleepScore: doc.data().sleepScore,
             dailyWeight: doc.data().dailyWeight,
             dailyStatus: doc.data().dailyStatus,

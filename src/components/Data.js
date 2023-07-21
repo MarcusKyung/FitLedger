@@ -1,14 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Card from "react-bootstrap/Card";
+import { Col, Row } from "react-bootstrap";
 
 function Data(props){
 
   return (
     <React.Fragment>
-      <Card style={{width: "600px"}} onClick = {() => props.whenDataClicked(props.id)}> 
-        <h1>{props.entryDate}</h1>
-      </Card>
+      <Row>
+        <Col />
+        <Col xs={6}>
+          <Card onClick = {() => props.whenDataClicked(props.id)}> 
+            <h1 style={{textAlign: "center"}}>{props.entryDate}</h1>
+          </Card>
+          <hr />
+        </Col>
+        <Col />
+      </Row>
     </React.Fragment>
   );
 }
