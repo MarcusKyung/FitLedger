@@ -20,17 +20,17 @@ function DataControl() {
   
     if (auth.currentUser !== null) { 
       console.log(auth.currentUser.email);
-      queryRef = query(collection(db, "entries"), where("author", "==", auth.currentUser.email)); 
+      queryRef = query(collection(db, "data"), where("author", "==", auth.currentUser.email)); 
     } else {  
-      queryRef = collection(db, "entries");
+      queryRef = collection(db, "data");
     }
   
     const unSubscribe = onSnapshot(
       queryRef,
       (collectionSnapshot) => {
-        const entries = [];
+        const data = [];
         collectionSnapshot.forEach((doc) => {
-          entries.push({
+          data.push({
             entryDate: doc.data().entryDate,
             meal1Name: doc.data().meal1Name,
               meal1Calories: doc.data().meal1Calories,
@@ -93,7 +93,7 @@ function DataControl() {
             author: doc.data().author,
           });
         });
-        setMainDataList(entries);
+        setMainDataList(data);
       },
       (error) => {
         setError(error.message);
