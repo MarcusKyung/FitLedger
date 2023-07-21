@@ -19,30 +19,30 @@ const { data, onClickingDelete, onClickingEdit } = props;
               <Card.Text>
               <Accordion defaultActiveKey={['0']} alwaysOpen>
                 <Accordion.Item eventKey="0">
-                  <Accordion.Header>{data.Meal1Name}</Accordion.Header>
+                  <Accordion.Header>{data.meal1Name}</Accordion.Header>
                   <Accordion.Body>
-                    <p>{data.Meal1Calories} Calories</p>
-                    <p>{data.Meal1Protein} g Protein</p>
-                    <p>{data.Meal1Carbs} g Carbs</p>
-                    <p>{data.Meal1Fats} g Fats</p>
+                    <p>{data.meal1Calories} Calories</p>
+                    <p>{data.meal1Protein} g Protein</p>
+                    <p>{data.meal1Carbs} g Carbs</p>
+                    <p>{data.meal1Fats} g Fats</p>
                   </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="1">
-                  <Accordion.Header>{data.Meal2Name}</Accordion.Header>
+                  <Accordion.Header>{data.meal2Name}</Accordion.Header>
                   <Accordion.Body>
-                    <p>{data.Meal2Calories} Calories</p>
-                      <p>{data.Meal2Protein} g Protein</p>
-                      <p>{data.Meal2Carbs} g Carbs</p>
-                      <p>{data.Meal2Fats} g Fats</p>
+                    <p>{data.meal2Calories} Calories</p>
+                      <p>{data.meal2Protein} g Protein</p>
+                      <p>{data.meal2Carbs} g Carbs</p>
+                      <p>{data.meal2Fats} g Fats</p>
                   </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="2">
-                  <Accordion.Header>{data.Meal3Name}</Accordion.Header>
+                  <Accordion.Header>{data.meal3Name}</Accordion.Header>
                   <Accordion.Body>
-                    <p>{data.Meal3Calories} Calories</p>
-                      <p>{data.Meal3Protein} g Protein</p>
-                      <p>{data.Meal3Carbs} g Carbs</p>
-                      <p>{data.Meal3Fats} g Fats</p>
+                    <p>{data.meal3Calories} Calories</p>
+                      <p>{data.meal3Protein} g Protein</p>
+                      <p>{data.meal3Carbs} g Carbs</p>
+                      <p>{data.meal3Fats} g Fats</p>
                   </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="3">
@@ -68,7 +68,7 @@ const { data, onClickingDelete, onClickingEdit } = props;
               <Card.Text>
                 <Accordion defaultActiveKey={['0']} alwaysOpen>
                   <Accordion.Item eventKey="0">
-                    <Accordion.Header>{props.exercise1Name}</Accordion.Header>
+                    <Accordion.Header>{data.exercise1Name}</Accordion.Header>
                     <Accordion.Body>
                       <p>{data.exercise1Sets} Sets</p>
                       <p>{data.exercise1Reps} Reps</p>
@@ -164,8 +164,8 @@ const { data, onClickingDelete, onClickingEdit } = props;
           {/* <small className="text-muted">Last updated 3 mins ago</small> */}
         </Card.Footer>
       </Card>
-      <Button onClick={onClickingEdit} variant="primary" size="lg" block>Update Data</Button>
-      <Button onClick={() => onClickingDelete(data.id)} variant="danger" size="lg" block>Delete Data Entry</Button>
+      <Button onClick={onClickingEdit} variant="primary" size="lg">Update Data</Button>
+      <Button onClick={() => onClickingDelete(data.id)} variant="danger" size="lg">Delete Data Entry</Button>
     </React.Fragment>
   )
 }
