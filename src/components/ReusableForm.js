@@ -7,12 +7,6 @@ const currentDate = new Date().toISOString().split('T')[0];
 
 
 function ReusableForm(props) {
-  const [selectedCardio, setSelectedCardio] = useState('');
-  const handleCardioChange = (event) => {
-    setSelectedCardio(event.target.value);
-  };
-
-
   return (
     <React.Fragment>
       <Container>
@@ -140,18 +134,16 @@ function ReusableForm(props) {
             <Col md={4}>
               <Form.Group className="mb-3" controlId="formCardioData">
                 <Form.Label>Select Cardio Type:</Form.Label>
-                <Form.Select style={{marginBottom: "15px", fontWeight: "bold"}} name="cardioName" onChange={handleCardioChange}>
+                <Form.Select style={{marginBottom: "15px", fontWeight: "bold"}} name="cardioName" >
                   <option disabled defaultValue="">Select Cardio Type</option>
                   <option value="Treadmill">Treadmill</option>
                   <option value="Elliptical">Elliptical</option>
                   <option value="Cycling">Cycling</option>
                   <option value="Stairmaster">Stairmaster</option>
                   <option value="Swim">Swim</option>
-                  <option value="Basketball">Basketball</option>
-                  <option value="Exercise/Fitness Class">Exercise/Fitness Class</option>
                 </Form.Select>
                 <Form.Control type="text" name="cardioDuration" placeholder="Cardio Duration" />
-                {selectedCardio !== 'Basketball' && selectedCardio !== 'Exercise/Fitness Class' ? (<Form.Control type="number" name="cardioDistance" placeholder="Cardio Distance" />) : null}
+                <Form.Control type="number" name="cardioDistance" placeholder="Cardio Distance" />
                 <Form.Control type="text" name="cardioNotes" placeholder="Cardio Note" />
               </Form.Group>
             </Col>
