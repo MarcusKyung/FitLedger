@@ -8,7 +8,7 @@ function NewDataForm(props){
   function handleNewDataFormSubmission(event) {
     event.preventDefault();
     props.onNewDataCreation({
-      entryDate: event.target.entryData.value,
+      entryDate: event.target.entryDate.value,
       meal1Name: event.target.meal1Name.value,
         meal1Calories: parseInt(event.target.meal1Calories.value),
         meal1Protein: parseInt(event.target.meal1Protein.value),
@@ -66,8 +66,6 @@ function NewDataForm(props){
       sleepScore: event.target.sleepScore.value,
       dailyWeight: parseInt(event.target.dailyWeight.value),
       dailyStatus: event.target.dailyStatus.value,
-
-      id: v4()
     });
   }
 

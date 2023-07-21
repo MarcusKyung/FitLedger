@@ -4,7 +4,7 @@ import DataList from './DataList'
 import DataDetails from './DataDetails'
 import EditDataForm from './EditDataForm'
 import { db, auth } from "./../firebase.js";
-import { collection, addDoc, doc, updateDoc, onSnapshot, deleteDoc, query, where, orderBy } from "firebase/firestore"; //Import Firestore helper functions
+import { collection, addDoc, doc, updateDoc, onSnapshot, deleteDoc, query, where } from "firebase/firestore"; //Import Firestore helper functions
 // import { formatDistanceToNow } from 'date-fns';
 import { Row, Col, Button, ButtonGroup } from 'react-bootstrap';
 
@@ -20,17 +20,17 @@ function DataControl() {
   
     if (auth.currentUser !== null) { 
       console.log(auth.currentUser.email);
-      queryRef = query(collection(db, "data"), where("author", "==", auth.currentUser.email)); 
+      queryRef = query(collection(db, "entries"), where("author", "==", auth.currentUser.email)); 
     } else {  
-      queryRef = collection(db, "data");
+      queryRef = collection(db, "entries");
     }
   
     const unSubscribe = onSnapshot(
       queryRef,
       (collectionSnapshot) => {
-        const data = [];
+        const entries = [];
         collectionSnapshot.forEach((doc) => {
-          data.push({
+          entries.push({
             entryDate: doc.data().entryDate,
             meal1Name: doc.data().meal1Name,
               meal1Calories: doc.data().meal1Calories,
@@ -82,7 +82,7 @@ function DataControl() {
             cardioName: doc.data().cardioName,
               cardioDuration: doc.data().cardioDuration,
               cardioDistance: doc.data().cardioDistance,
-              cardioNote: doc.data().cardioNote,
+              cardioNotes: doc.data().cardioNotes,
             sleepTime: doc.data().sleepTime,
             wakeTime: doc.data().wakeTime,
             sleepDescription: doc.data().sleepDescription,
@@ -93,7 +93,7 @@ function DataControl() {
             author: doc.data().author,
           });
         });
-        setMainDataList(data);
+        setMainDataList(entries);
       },
       (error) => {
         setError(error.message);
