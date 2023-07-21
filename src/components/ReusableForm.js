@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from 'prop-types';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 
@@ -182,7 +182,7 @@ function ReusableForm(props) {
             <Col md={4}>
               <Form.Group className="mb-3" controlId="dailyHealthData">
                 <Form.Label>Daily Health Status:</Form.Label>
-                <Form.Control type="number" name="dailyWeight" placeholder="Daily Weight (lbs)" />
+                <Form.Control defaultValue="0" type="number" name="dailyWeight" placeholder="Daily Weight (lbs)"/>
                 <Form.Select defaultValue="" name="dailyStatus">
                   <option disabled>Select Daily Status</option>
                   <option value="Very Sick">Very Sick: Severely unwell, experiencing intense discomfort or serious illness.</option>

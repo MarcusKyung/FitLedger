@@ -5,6 +5,8 @@ import { Container, Card, CardGroup, Accordion, Button } from 'react-bootstrap'
 export default function DataDetails(props) {
 const { data, onClickingDelete, onClickingEdit } = props;
 
+//Fix this: thecodeforge.io/post/quickly-fix-validatedomnesting-div-cannot-appear-as-a-descendant-of-p-tag-error
+
   return (
     <React.Fragment>
       <Container>
@@ -32,18 +34,18 @@ const { data, onClickingDelete, onClickingEdit } = props;
                   <Accordion.Header>Meal 2: {data.meal2Name}</Accordion.Header>
                   <Accordion.Body>
                     <p>{data.meal2Calories} Calories</p>
-                      <p>{data.meal2Protein} g Protein</p>
-                      <p>{data.meal2Carbs} g Carbs</p>
-                      <p>{data.meal2Fats} g Fats</p>
+                    <p>{data.meal2Protein} g Protein</p>
+                    <p>{data.meal2Carbs} g Carbs</p>
+                    <p>{data.meal2Fats} g Fats</p>
                   </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="2">
                   <Accordion.Header>Meal 3: {data.meal3Name}</Accordion.Header>
                   <Accordion.Body>
                     <p>{data.meal3Calories} Calories</p>
-                      <p>{data.meal3Protein} g Protein</p>
-                      <p>{data.meal3Carbs} g Carbs</p>
-                      <p>{data.meal3Fats} g Fats</p>
+                    <p>{data.meal3Protein} g Protein</p>
+                    <p>{data.meal3Carbs} g Carbs</p>
+                    <p>{data.meal3Fats} g Fats</p>
                   </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="3">
@@ -135,17 +137,10 @@ const { data, onClickingDelete, onClickingEdit } = props;
               <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
               <hr />
               <Card.Text>
-                <Accordion>
-                  <Accordion.Item eventKey="0">
-                    <Accordion.Header>Sleep Data:</Accordion.Header>
-                    <Accordion.Body>
-                      <p>{data.sleepTime} Bedtime</p>
-                      <p>{data.wakeTime} Waketime</p>
-                      <p>{data.sleepQuality}</p>
-                      <p>{data.sleepScore}/10</p>
-                    </Accordion.Body>
-                  </Accordion.Item>
-                </Accordion>
+                <p>{data.sleepTime} Bedtime</p>
+                <p>{data.wakeTime} Waketime</p>
+                <p>{data.sleepQuality}</p>
+                <p>{data.sleepScore}/10</p>
               </Card.Text>
             </Card.Body>
             <Card.Footer>
