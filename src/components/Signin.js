@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Form from "react-bootstrap/Form";
+import Container from 'react-bootstrap/Container';
 
 function SignIn() {
   const [signUpSuccess, setSignUpSuccess] = useState(null);
@@ -61,8 +62,8 @@ function SignIn() {
 
   return (
     <React.Fragment>
+      <Container>
       <Row>
-        <Col />
         <Col>
           <Card>
             <Card.Header><h1>Sign up</h1></Card.Header>
@@ -109,8 +110,8 @@ function SignIn() {
 
           </Card>
         </Col>
-        <Col />
       </Row>
+      </Container>
     </React.Fragment>
   );
 }
