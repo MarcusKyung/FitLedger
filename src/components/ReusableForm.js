@@ -12,7 +12,7 @@ function ReusableForm(props) {
           <Form.Control type="text" name="meal1Name" placeholder="Meal 1 Name" />
           <Form.Control type="number" name="meal1Calories" placeholder="Meal 1 Calories (cal)" />
           <Form.Control type="number" name="meal1Protein" placeholder="Meal 1 Protein (g)" />
-          <Form.Control type="number" name="mealCarbs" placeholder="Meal 1 Carbs (g)" />
+          <Form.Control type="number" name="meal1Carbs" placeholder="Meal 1 Carbs (g)" />
           <Form.Control type="number" name="meal1Fats" placeholder="Meal 1 Fats (g)" />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formMeal2Data">
@@ -92,7 +92,7 @@ function ReusableForm(props) {
           </Form.Select>
           <Form.Control type="text" name="cardioDuration" placeholder="Cardio Duration" />
           <Form.Control type="number" name="cardioDistance" placeholder="Cardio Distance" />
-          <Form.Control type="text" name="cardioNote" placeholder="Cardio Note" />
+          <Form.Control type="text" name="cardioNotes" placeholder="Cardio Note" />
         </Form.Group>
 
         <hr />
@@ -102,7 +102,7 @@ function ReusableForm(props) {
           <Form.Control type="text" name="sleepQuality" placeholder="Sleep Quality Description" />
           <Form.Control type="number" name="sleepScore" placeholder="Sleep Score 1-10" min="1" max="10"/>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formSleepData">
+        <Form.Group className="mb-3" controlId="dailyHealthData">
           <Form.Control type="number" name="dailyWeight" placeholder="Daily Weight (lbs)" />
           <Form.Select defaultValue="" name="dailyStatus">
             <option disabled>Select Daily Status</option>

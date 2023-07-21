@@ -62,7 +62,7 @@ function NewDataForm(props){
         cardioNotes: event.target.cardioNotes.value,
       sleepTime: event.target.sleepTime.value,
       wakeTime: event.target.wakeTime.value,
-      sleepDescription: event.target.sleepDescription.value,
+      sleepQuality: event.target.sleepQuality.value,
       sleepScore: event.target.sleepScore.value,
       dailyWeight: parseInt(event.target.dailyWeight.value),
       dailyStatus: event.target.dailyStatus.value,
