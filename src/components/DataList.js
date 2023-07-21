@@ -63,7 +63,7 @@ export default function DataList(props) {
           cardioNote={data.cardioNote}
           sleepTime={data.sleepTime}
           wakeTime={data.wakeTime}
-          sleepDescription={data.sleepDescription}
+          sleepQuality={data.sleepQuality}
           sleepScore={data.sleepScore}
           dailyWeight={data.dailyWeight}
           dailyStatus={data.dailyStatus}

@@ -41,8 +41,8 @@ function ReusableForm(props) {
           <Form.Control type="number" name="supplement2Amount" placeholder="Supplement 2 Amount (mg)" />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formSupplement3Data">
-          <Form.Control type="text" name="supplement3Name" placeholder="Supplement 2 Name" />
-          <Form.Control type="number" name="supplement3Amount" placeholder="Supplement 2 Amount (mg)" />
+          <Form.Control type="text" name="supplement3Name" placeholder="Supplement 3 Name" />
+          <Form.Control type="number" name="supplement3Amount" placeholder="Supplement 3 Amount (mg)" />
         </Form.Group>
         <hr />
         <Form.Group className="mb-3" controlId="formExercise1Data">
