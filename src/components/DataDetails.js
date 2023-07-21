@@ -1,25 +1,24 @@
-import React from 'react'
-import PropTypes from "prop-types";
-import { Container, Card, CardGroup, Accordion, Button } from 'react-bootstrap'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Container, Card, CardGroup, Accordion, Button } from 'react-bootstrap';
 
 export default function DataDetails(props) {
-const { data, onClickingDelete, onClickingEdit } = props;
+  const { data, onClickingDelete, onClickingEdit } = props;
 
-//Fix this: thecodeforge.io/post/quickly-fix-validatedomnesting-div-cannot-appear-as-a-descendant-of-p-tag-error
+  // Fix this: thecodeforge.io/post/quickly-fix-validatedomnesting-div-cannot-appear-as-a-descendant-of-p-tag-error
 
   return (
     <React.Fragment>
       <Container>
-        <Card>
+        {/* <Card>
           <h1>Date : {data.entryDate}</h1>
-        </Card>
+        </Card> */}
         <CardGroup>
           <Card>
             <Card.Body>
               <Card.Title>Food Data</Card.Title>
               <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
               <hr />
-              <Card.Text>
               <Accordion>
                 <Accordion.Item eventKey="0">
                   <Accordion.Header>Meal 1: {data.meal1Name}</Accordion.Header>
@@ -51,19 +50,25 @@ const { data, onClickingDelete, onClickingEdit } = props;
                 <Accordion.Item eventKey="3">
                   <Accordion.Header>Fluids and Supplement Data</Accordion.Header>
                   <Accordion.Body>
-                  <p>{data.waterIntake} oz</p>
-                  <p>{data.supplement1Name}</p> - <p>{data.supplement1Amount} mg</p>
-                  <p>{data.supplement2Name}</p> - <p>{data.supplement2Amount} mg</p>
-                  <p>{data.supplement3Name}</p> - <p>{data.supplement3Amount} mg</p>
+                    <p>{data.waterIntake} oz</p>
+                    <p>
+                      {data.supplement1Name} - {data.supplement1Amount} mg
+                    </p>
+                    <p>
+                      {data.supplement2Name} - {data.supplement2Amount} mg
+                    </p>
+                    <p>
+                      {data.supplement3Name} - {data.supplement3Amount} mg
+                    </p>
                   </Accordion.Body>
                 </Accordion.Item>
               </Accordion>
-              </Card.Text>
             </Card.Body>
             <Card.Footer>
               <p>Footer text here</p>
             </Card.Footer>
           </Card>
+
           <Card>
             <Card.Body>
               <Card.Title>Resistance/Cardio Data</Card.Title>
@@ -119,9 +124,9 @@ const { data, onClickingDelete, onClickingEdit } = props;
                   <Accordion.Item eventKey="5">
                     <Accordion.Header>Cardio: {data.cardioName}</Accordion.Header>
                     <Accordion.Body>
-                    <p>{data.cardioDuration}Minutes</p>
-                    <p>{data.cardioDistance}mi</p>
-                    <p>{data.cardioNotes}</p>
+                      <p>{data.cardioDuration} Minutes</p>
+                      <p>{data.cardioDistance} mi</p>
+                      <p>{data.cardioNotes}</p>
                     </Accordion.Body>
                   </Accordion.Item>
                 </Accordion>
@@ -131,6 +136,7 @@ const { data, onClickingDelete, onClickingEdit } = props;
               <p>Footer text here</p>
             </Card.Footer>
           </Card>
+
           <Card>
             <Card.Body>
               <Card.Title>Recovery Data</Card.Title>
@@ -148,6 +154,7 @@ const { data, onClickingDelete, onClickingEdit } = props;
             </Card.Footer>
           </Card>
         </CardGroup>
+
         <Card>
           <Card.Body>
             <Card.Title>Health Data</Card.Title>
@@ -161,17 +168,22 @@ const { data, onClickingDelete, onClickingEdit } = props;
             <p>Footer text here</p>
           </Card.Footer>
         </Card>
+
         <div className="d-grid gap-2">
-          <Button onClick={onClickingEdit} variant="primary" size="lg">Update Data</Button>
-          <Button onClick={() => onClickingDelete(data.id)} variant="danger" size="lg">Delete Data Entry</Button>
+          <Button onClick={onClickingEdit} variant="primary" size="lg">
+            Update Data
+          </Button>
+          <Button onClick={() => onClickingDelete(data.id)} variant="danger" size="lg">
+            Delete Data Entry
+          </Button>
         </div>
       </Container>
     </React.Fragment>
-  )
+  );
 }
 
 DataDetails.propTypes = {
   data: PropTypes.object,
   onClickingDelete: PropTypes.func,
-  onClickingEdit: PropTypes.func 
+  onClickingEdit: PropTypes.func,
 };
