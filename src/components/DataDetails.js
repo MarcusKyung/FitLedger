@@ -2,24 +2,25 @@ import React from 'react'
 import PropTypes from "prop-types";
 import { Container, Card, CardGroup, Accordion, Button } from 'react-bootstrap'
 
-
-
 export default function DataDetails(props) {
 const { data, onClickingDelete, onClickingEdit } = props;
 
   return (
     <React.Fragment>
-      <h1>{data.entryDate}</h1>
       <Container>
+        <Card>
+          <h1>Date : {data.entryDate}</h1>
+        </Card>
         <CardGroup>
           <Card>
             <Card.Body>
               <Card.Title>Food Data</Card.Title>
               <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+              <hr />
               <Card.Text>
-              <Accordion defaultActiveKey={['0']} alwaysOpen>
+              <Accordion>
                 <Accordion.Item eventKey="0">
-                  <Accordion.Header>{data.meal1Name}</Accordion.Header>
+                  <Accordion.Header>Meal 1: {data.meal1Name}</Accordion.Header>
                   <Accordion.Body>
                     <p>{data.meal1Calories} Calories</p>
                     <p>{data.meal1Protein} g Protein</p>
@@ -28,7 +29,7 @@ const { data, onClickingDelete, onClickingEdit } = props;
                   </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="1">
-                  <Accordion.Header>{data.meal2Name}</Accordion.Header>
+                  <Accordion.Header>Meal 2: {data.meal2Name}</Accordion.Header>
                   <Accordion.Body>
                     <p>{data.meal2Calories} Calories</p>
                       <p>{data.meal2Protein} g Protein</p>
@@ -37,7 +38,7 @@ const { data, onClickingDelete, onClickingEdit } = props;
                   </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="2">
-                  <Accordion.Header>{data.meal3Name}</Accordion.Header>
+                  <Accordion.Header>Meal 3: {data.meal3Name}</Accordion.Header>
                   <Accordion.Body>
                     <p>{data.meal3Calories} Calories</p>
                       <p>{data.meal3Protein} g Protein</p>
@@ -58,17 +59,18 @@ const { data, onClickingDelete, onClickingEdit } = props;
               </Card.Text>
             </Card.Body>
             <Card.Footer>
-              {/* <small className="text-muted">Last updated 3 mins ago</small> */}
+              <p>Footer text here</p>
             </Card.Footer>
           </Card>
           <Card>
             <Card.Body>
               <Card.Title>Resistance/Cardio Data</Card.Title>
               <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+              <hr />
               <Card.Text>
-                <Accordion defaultActiveKey={['0']} alwaysOpen>
+                <Accordion>
                   <Accordion.Item eventKey="0">
-                    <Accordion.Header>{data.exercise1Name}</Accordion.Header>
+                    <Accordion.Header>Exercise 1: {data.exercise1Name}</Accordion.Header>
                     <Accordion.Body>
                       <p>{data.exercise1Sets} Sets</p>
                       <p>{data.exercise1Reps} Reps</p>
@@ -77,7 +79,7 @@ const { data, onClickingDelete, onClickingEdit } = props;
                     </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="1">
-                    <Accordion.Header>{data.exercise2Name}</Accordion.Header>
+                    <Accordion.Header>Exercise 2: {data.exercise2Name}</Accordion.Header>
                     <Accordion.Body>
                       <p>{data.exercise2Sets} Sets</p>
                       <p>{data.exercise2Reps} Reps</p>
@@ -86,7 +88,7 @@ const { data, onClickingDelete, onClickingEdit } = props;
                     </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="2">
-                    <Accordion.Header>{data.exercise3Name}</Accordion.Header>
+                    <Accordion.Header>Exercise 3: {data.exercise3Name}</Accordion.Header>
                     <Accordion.Body>
                       <p>{data.exercise3Sets} Sets</p>
                       <p>{data.exercise3Reps} Reps</p>
@@ -95,7 +97,7 @@ const { data, onClickingDelete, onClickingEdit } = props;
                     </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="3">
-                    <Accordion.Header>{data.exercise4Name}</Accordion.Header>
+                    <Accordion.Header>Exercise 4: {data.exercise4Name}</Accordion.Header>
                     <Accordion.Body>
                       <p>{data.exercise4Sets} Sets</p>
                       <p>{data.exercise4Reps} Reps</p>
@@ -104,7 +106,7 @@ const { data, onClickingDelete, onClickingEdit } = props;
                     </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="4">
-                    <Accordion.Header>{data.exercise5Name}</Accordion.Header>
+                    <Accordion.Header>Exercise 5: {data.exercise5Name}</Accordion.Header>
                     <Accordion.Body>
                       <p>{data.exercise5Sets} Sets</p>
                       <p>{data.exercise5Reps} Reps</p>
@@ -113,59 +115,62 @@ const { data, onClickingDelete, onClickingEdit } = props;
                     </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="5">
-                    <Accordion.Header>{data.cardioName}</Accordion.Header>
+                    <Accordion.Header>Cardio: {data.cardioName}</Accordion.Header>
                     <Accordion.Body>
-                    <p>{data.cardioDuration}</p>
-                    <p>{data.cardioDistance}</p>
-                    <p>{data.cardioNote}</p>
+                    <p>{data.cardioDuration}Minutes</p>
+                    <p>{data.cardioDistance}mi</p>
+                    <p>{data.cardioNotes}</p>
                     </Accordion.Body>
                   </Accordion.Item>
                 </Accordion>
               </Card.Text>
             </Card.Body>
             <Card.Footer>
-              {/* <small className="text-muted">Last updated 3 mins ago</small> */}
+              <p>Footer text here</p>
             </Card.Footer>
           </Card>
           <Card>
             <Card.Body>
               <Card.Title>Recovery Data</Card.Title>
               <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+              <hr />
               <Card.Text>
-              <Accordion defaultActiveKey={['0']} alwaysOpen>
-                <Accordion.Item eventKey="0">
-                  <Accordion.Header>Sleep Data:</Accordion.Header>
-                  <Accordion.Body>
-                    <p>{data.sleepTime} Reps</p>
-                    <p>{data.wakeTime} lbs</p>
-                    <p>{data.sleepDescription}</p>
-                    <p>{data.sleepScore}</p>
-                  </Accordion.Body>
-                </Accordion.Item>
-              </Accordion>
+                <Accordion>
+                  <Accordion.Item eventKey="0">
+                    <Accordion.Header>Sleep Data:</Accordion.Header>
+                    <Accordion.Body>
+                      <p>{data.sleepTime} Bedtime</p>
+                      <p>{data.wakeTime} Waketime</p>
+                      <p>{data.sleepQuality}</p>
+                      <p>{data.sleepScore}/10</p>
+                    </Accordion.Body>
+                  </Accordion.Item>
+                </Accordion>
               </Card.Text>
             </Card.Body>
             <Card.Footer>
-              {/* <small className="text-muted">Last updated 3 mins ago</small> */}
+              <p>Footer text here</p>
             </Card.Footer>
           </Card>
         </CardGroup>
+        <Card>
+          <Card.Body>
+            <Card.Title>Health Data</Card.Title>
+            <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+            <Card.Text>
+              <p>{data.dailyWeight}</p>
+              <p>{data.dailyStatus}</p>
+            </Card.Text>
+          </Card.Body>
+          <Card.Footer>
+            <p>Footer text here</p>
+          </Card.Footer>
+        </Card>
+        <div className="d-grid gap-2">
+          <Button onClick={onClickingEdit} variant="primary" size="lg">Update Data</Button>
+          <Button onClick={() => onClickingDelete(data.id)} variant="danger" size="lg">Delete Data Entry</Button>
+        </div>
       </Container>
-      <Card>
-        <Card.Body>
-          <Card.Title>Health Data</Card.Title>
-          <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-          <Card.Text>
-            <p>{data.dailyWeight}</p>
-            <p>{data.dailyStatus}</p>
-          </Card.Text>
-        </Card.Body>
-        <Card.Footer>
-          {/* <small className="text-muted">Last updated 3 mins ago</small> */}
-        </Card.Footer>
-      </Card>
-      <Button onClick={onClickingEdit} variant="primary" size="lg">Update Data</Button>
-      <Button onClick={() => onClickingDelete(data.id)} variant="danger" size="lg">Delete Data Entry</Button>
     </React.Fragment>
   )
 }
