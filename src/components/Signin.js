@@ -1,12 +1,7 @@
 import React, { useState } from "react";
 import { auth } from "../firebase.js";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, } from "firebase/auth";
-import Card from 'react-bootstrap/Card';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
-import Form from "react-bootstrap/Form";
-import Container from 'react-bootstrap/Container';
+import { Card, Row, Col, Button, Form, Container } from 'react-bootstrap';
 
 function SignIn() {
   const [signUpSuccess, setSignUpSuccess] = useState(null);
@@ -107,7 +102,6 @@ function SignIn() {
               {signOutSuccess}
               <Button variant="primary" onClick={doSignOut}>Sign Out</Button>
             </Card.Body>
-
           </Card>
         </Col>
       </Row>

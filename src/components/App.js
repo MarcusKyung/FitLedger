@@ -5,6 +5,7 @@ import DailyQuote from './DailyQuote';
 import SignIn from './SignIn';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; 
 import { auth } from "../firebase";
+import TDEECalculator from "./TDEECalculator";
 // import VictoryTest from './VictoryTest'; //Will need to live in DataControl in order to use props
 
 function App() {
@@ -20,10 +21,11 @@ function App() {
 
   return (
     <Router>
-      <Header />
+      <Header currentUser={currentUser}/>
       <DailyQuote />
       <Routes>
         <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/tdee" element={<TDEECalculator />} />
         <Route path="/" element={<DataControl />} currentUser={currentUser}/>
       </Routes>
       {/* <VictoryTest /> */}
