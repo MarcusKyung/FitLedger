@@ -1,7 +1,6 @@
 import { React, useState, useEffect } from "react";
 import Header from './Header';
 import DataControl from './DataControl';
-import DailyQuote from './DailyQuote';
 import SignIn from './SignIn';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; 
 import { auth } from "../firebase";
@@ -22,7 +21,6 @@ function App() {
   return (
     <Router>
       <Header currentUser={currentUser}/>
-      <DailyQuote />
       <Routes>
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/tdee" element={<TDEECalculator />} />

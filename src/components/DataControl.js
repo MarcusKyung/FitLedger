@@ -6,7 +6,8 @@ import EditDataForm from './EditDataForm'
 import { db, auth } from "./../firebase.js";
 import { collection, addDoc, doc, updateDoc, onSnapshot, deleteDoc, query, where } from "firebase/firestore"; //Import Firestore helper functions
 // import { formatDistanceToNow } from 'date-fns';
-import { Row, Col, Button, ButtonGroup } from 'react-bootstrap';
+import { Container, Row, Col, Button, ButtonGroup, Card } from 'react-bootstrap';
+import DailyQuote from './DailyQuote';
 
 function DataControl() {
   const [formVisibleOnPage, setFormVisibleOnPage] = useState(false);
@@ -144,16 +145,18 @@ function DataControl() {
 
   if (auth.currentUser == null) {
     return (
-      <React.Fragment>
-        <Row>
-          <Col />
+      <Container fluid className="d-flex justify-content-center align-items-center vh-100">
+        <Row className="justify-content-center">
           <Col>
-            <h1 style={{ color: "red" , marginTop: "1em"}}>You must be signed in to access entries</h1>
+            <Card style={{ paddingBottom: "50px", paddingTop: "50px", paddingLeft: "200px", paddingRight: "200px"  }}>
+              <h1 style={{ textAlign: "center"}}>You must be signed in to access entries</h1>
+              <DailyQuote />
+            </Card>
           </Col>
-          <Col />
         </Row>
-      </React.Fragment>
+      </Container>
     );
+
   } else if (auth.currentUser != null) {
     let currentlyVisibleState = null;
     let buttonText = null;
