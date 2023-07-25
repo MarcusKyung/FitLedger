@@ -4,14 +4,14 @@ import { db } from './../firebase.js';
 
 export default function DailyQuote() {
   const [quote, setQuote] = useState('');
-  const [error, setError] = useState(null);
+  const [author, setAuthor] = useState('');
 
   useEffect(() => {
     const fetchRandomQuote = async () => {
       try {
         // Get the total number of documents in the "fitnessQuotes" collection
         const collectionRef = collection(db, 'fitnessQuotes');
-        const queryRef = query(collectionRef, orderBy('ID'), limit(6));
+        const queryRef = query(collectionRef, orderBy('ID'), limit(7));
         const snapshot = await getDocs(queryRef);
 
         // Convert the snapshot into an array of documents
@@ -21,30 +21,28 @@ export default function DailyQuote() {
           // Generate a random index within the fetched documents range
           const randomIndex = Math.floor(Math.random() * documents.length);
 
-          // Set the random quote in the state
+          // Set the random quote and author in the state
           setQuote(documents[randomIndex].Quote);
+          setAuthor(documents[randomIndex].Author);
         } else {
           setQuote('No quotes found.');
         }
       } catch (error) {
-        console.error('Error fetching quote:', error);
         setQuote('Error fetching quote.');
-        setError(error);
       }
     };
 
     fetchRandomQuote();
 
     return () => {
-      // Cleanup function to unsubscribe snapshot listener
-      // (You don't need this because you are using getDocs instead of onSnapshot)
+
     };
   }, []);
 
   return (
     <div style={{ textAlign: 'center' }}>
-      <h1>Daily Quote</h1>
-      <p>{quote}</p>
+      <hr />
+      <p>{quote} - <em>{author}</em></p>
     </div>
   );
 }
