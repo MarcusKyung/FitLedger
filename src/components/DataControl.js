@@ -91,6 +91,10 @@ function DataControl() {
             dailyStatus: doc.data().dailyStatus,
             id: doc.id,
             author: doc.data().author,
+            totalCalories: doc.data().totalCalories,
+            totalProtein: doc.data().totalProtein,
+            totalCarbs: doc.data().totalCarbs,
+            totalFats: doc.data().totalFats,
           });
         });
         data.sort((a, b) => new Date(b.entryDate) - new Date(a.entryDate));

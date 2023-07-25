@@ -3,8 +3,41 @@ import PropTypes from "prop-types";
 import ReusableForm from "./ReusableForm";
 
 function NewDataForm(props){
+  function calculateTotalCalories(event) {
+    const meal1Calories = parseInt(event.target.meal1Calories.value);
+    const meal2Calories = parseInt(event.target.meal2Calories.value);
+    const meal3Calories = parseInt(event.target.meal3Calories.value);
+    return meal1Calories + meal2Calories + meal3Calories;
+  }
+
+  function calculateTotalProtein(event) {
+    const meal1Protein = parseInt(event.target.meal1Protein.value);
+    const meal2Protein = parseInt(event.target.meal2Protein.value);
+    const meal3Protein = parseInt(event.target.meal3Protein.value);
+    return meal1Protein + meal2Protein + meal3Protein;
+  }
+
+  function calculateTotalCarbs(event) {
+    const meal1Carbs = parseInt(event.target.meal1Carbs.value);
+    const meal2Carbs = parseInt(event.target.meal2Carbs.value);
+    const meal3Carbs = parseInt(event.target.meal3Carbs.value);
+    return meal1Carbs + meal2Carbs + meal3Carbs;
+  }
+
+  function calculateTotalFats(event) {
+    const meal1Fats = parseInt(event.target.meal1Fats.value);
+    const meal2Fats = parseInt(event.target.meal2Fats.value);
+    const meal3Fats = parseInt(event.target.meal3Fats.value);
+    return meal1Fats + meal2Fats + meal3Fats;
+  }
+
 
   function handleNewDataFormSubmission(event) {
+    const totalCalories = calculateTotalCalories(event); 
+    const totalProtein = calculateTotalProtein(event); 
+    const totalCarbs = calculateTotalCarbs(event); 
+    const totalFats = calculateTotalFats(event); 
+
     event.preventDefault();
     props.onNewDataCreation({
       entryDate: event.target.entryDate.value,
@@ -65,6 +98,11 @@ function NewDataForm(props){
       sleepScore: event.target.sleepScore.value,
       dailyWeight: parseInt(event.target.dailyWeight.value),
       dailyStatus: event.target.dailyStatus.value,
+      totalCalories: totalCalories,
+      totalProtein: totalProtein,
+      totalCarbs: totalCarbs,
+      totalFats: totalFats,
+
     });
   }
 

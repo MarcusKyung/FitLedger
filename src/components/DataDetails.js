@@ -18,7 +18,6 @@ export default function DataDetails(props) {
           <Card>
             <Card.Body>
               <Card.Title>Food Data</Card.Title>
-              <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
               <hr />
               <Accordion>
                 <Accordion.Item eventKey="0">
@@ -72,7 +71,6 @@ export default function DataDetails(props) {
           <Card>
             <Card.Body>
               <Card.Title>Resistance/Cardio Data</Card.Title>
-              <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
               <hr />
               <Card.Text>
                 <Accordion>
@@ -139,13 +137,12 @@ export default function DataDetails(props) {
           <Card>
             <Card.Body>
               <Card.Title>Recovery Data</Card.Title>
-              <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
               <hr />
               <Card.Text>
-                <p>{data.sleepTime} Bedtime</p>
-                <p>{data.wakeTime} Waketime</p>
-                <p>{data.sleepQuality}</p>
-                <p>{data.sleepScore}/10</p>
+                <p>Bedtime: {data.sleepTime}</p>
+                <p>Waketime: {data.wakeTime}</p>
+                <p>Sleep Quality Description: {data.sleepQuality}</p>
+                <p>Sleep rating: {data.sleepScore}/10</p>
               </Card.Text>
             </Card.Body>
             <Card.Footer>
@@ -156,7 +153,7 @@ export default function DataDetails(props) {
         <Card style={{marginTop: "10px"}}>
           <Card.Body>
             <Card.Title>Health Data</Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+            <hr />
             <Card.Text>
               <p>Daily Weight: {data.dailyWeight}</p>
               <p>Daily Status: {data.dailyStatus}</p>
