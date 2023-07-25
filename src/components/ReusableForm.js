@@ -15,7 +15,7 @@ function ReusableForm(props) {
             <Col md={4}>
               <Form.Group className="mb-3" controlId="formEntryDate">
                 <Form.Label style={{fontWeight: "bold"}}>Entry Date:</Form.Label>
-                <Form.Control type="date" name="entryDate" placeholder="Entry Date" defaultValue={currentDate}/>
+                <Form.Control type="date" name="entryDate" placeholder="Entry Date" defaultValue={currentDate}  required/>
               </Form.Group>
             </Col>
           </Row>
@@ -24,29 +24,29 @@ function ReusableForm(props) {
           <Row>
             <Col md={4}>
               <Form.Group className="mb-3" controlId="formMeal1Data">
-                <Form.Control style={{marginBottom: "10px", fontWeight: "bold"}} type="text" name="meal1Name" placeholder="Meal 1 Name"/>
-                <Form.Control type="number" name="meal1Calories" placeholder="Meal 1 Calories (cal)"/>
-                <Form.Control type="number" name="meal1Protein" placeholder="Meal 1 Protein (g)"/>
-                <Form.Control type="number" name="meal1Carbs" placeholder="Meal 1 Carbs (g)"/>
-                <Form.Control type="number" name="meal1Fats" placeholder="Meal 1 Fats (g)"/>
+                <Form.Control style={{marginBottom: "10px", fontWeight: "bold"}} type="text" name="meal1Name" placeholder="Meal 1 Name" required/>
+                <Form.Control type="number" name="meal1Calories" placeholder="Meal 1 Calories (cal)" required/>
+                <Form.Control type="number" name="meal1Protein" placeholder="Meal 1 Protein (g)" required/>
+                <Form.Control type="number" name="meal1Carbs" placeholder="Meal 1 Carbs (g)" required/>
+                <Form.Control type="number" name="meal1Fats" placeholder="Meal 1 Fats (g)" required/>
               </Form.Group>
             </Col>
             <Col md={4}>
               <Form.Group className="mb-3" controlId="formMeal1Data">
-                <Form.Control style={{marginBottom: "10px", fontWeight: "bold"}} type="text" name="meal2Name" placeholder="Meal 2 Name"/>
-                <Form.Control type="number" name="meal2Calories" placeholder="Meal 2 Calories (cal)"/>
-                <Form.Control type="number" name="meal2Protein" placeholder="Meal 2 Protein (g)"/>
-                <Form.Control type="number" name="meal2Carbs" placeholder="Meal 2 Carbs (g)"/>
-                <Form.Control type="number" name="meal2Fats" placeholder="Meal 2 Fats (g)"/>
+                <Form.Control style={{marginBottom: "10px", fontWeight: "bold"}} type="text" name="meal2Name" placeholder="Meal 2 Name" required/>
+                <Form.Control type="number" name="meal2Calories" placeholder="Meal 2 Calories (cal)" required/>
+                <Form.Control type="number" name="meal2Protein" placeholder="Meal 2 Protein (g)" required/>
+                <Form.Control type="number" name="meal2Carbs" placeholder="Meal 2 Carbs (g)" required/>
+                <Form.Control type="number" name="meal2Fats" placeholder="Meal 2 Fats (g)" required/>
               </Form.Group>
             </Col>
             <Col md={4}>
               <Form.Group className="mb-3" controlId="formMeal1Data">
-                <Form.Control style={{marginBottom: "10px", fontWeight: "bold"}} type="text" name="meal3Name" placeholder="Meal 3 Name" />
-                <Form.Control type="number" name="meal3Calories" placeholder="Meal 3 Calories (cal)"/>
-                <Form.Control type="number" name="meal3Protein" placeholder="Meal 3 Protein (g)"/>
-                <Form.Control type="number" name="meal3Carbs" placeholder="Meal 3 Carbs (g)"/>
-                <Form.Control type="number" name="meal3Fats" placeholder="Meal 3 Fats (g)"/>
+                <Form.Control style={{marginBottom: "10px", fontWeight: "bold"}} type="text" name="meal3Name" placeholder="Meal 3 Name"  required/>
+                <Form.Control type="number" name="meal3Calories" placeholder="Meal 3 Calories (cal)" required/>
+                <Form.Control type="number" name="meal3Protein" placeholder="Meal 3 Protein (g)" required/>
+                <Form.Control type="number" name="meal3Carbs" placeholder="Meal 3 Carbs (g)" required/>
+                <Form.Control type="number" name="meal3Fats" placeholder="Meal 3 Fats (g)" required/>
               </Form.Group>
             </Col>
           </Row>
@@ -56,7 +56,7 @@ function ReusableForm(props) {
             <Col md={4}>
               <Form.Group className="mb-3" controlId="formWaterIntakeData">
                 <Form.Label>Water Intake:</Form.Label>
-                <Form.Control type="number" name="waterIntake" placeholder="Daily Water Intake (oz)" />
+                <Form.Control type="number" name="waterIntake" placeholder="Daily Water Intake (oz)"  required/>
               </Form.Group>
             </Col>
           </Row>
@@ -64,22 +64,22 @@ function ReusableForm(props) {
             <Col md={4}>
               <Form.Group className="mb-3" controlId="formSupplement1Data">
                 <Form.Label>Supplement 1 Entry:</Form.Label>
-                <Form.Control type="text" name="supplement1Name" placeholder="Supplement 1 Name" />
-                <Form.Control type="number" name="supplement1Amount" placeholder="Supplement 1 Amount (mg)" />
+                <Form.Control type="text" name="supplement1Name" placeholder="Supplement 1 Name"  required/>
+                <Form.Control type="number" name="supplement1Amount" placeholder="Supplement 1 Amount (mg)"  required/>
               </Form.Group>
             </Col>
             <Col md={4}>
               <Form.Group className="mb-3" controlId="formSupplement2Data">
                 <Form.Label>Supplement 2 Entry:</Form.Label>
-                <Form.Control type="text" name="supplement2Name" placeholder="Supplement 2 Name" />
-                <Form.Control type="number" name="supplement2Amount" placeholder="Supplement 2 Amount (mg)" />
+                <Form.Control type="text" name="supplement2Name" placeholder="Supplement 2 Name"  required/>
+                <Form.Control type="number" name="supplement2Amount" placeholder="Supplement 2 Amount (mg)"  required/>
               </Form.Group>
             </Col>
             <Col md={4}>
               <Form.Group className="mb-3" controlId="formSupplement3Data">
                 <Form.Label>Supplement 3 Entry:</Form.Label>
-                <Form.Control type="text" name="supplement3Name" placeholder="Supplement 3 Name" />
-                <Form.Control type="number" name="supplement3Amount" placeholder="Supplement 3 Amount (mg)" />
+                <Form.Control type="text" name="supplement3Name" placeholder="Supplement 3 Name"  required/>
+                <Form.Control type="number" name="supplement3Amount" placeholder="Supplement 3 Amount (mg)"  required/>
               </Form.Group>
             </Col>
           </Row>
@@ -88,53 +88,53 @@ function ReusableForm(props) {
           <Row>
             <Col md={4}>
               <Form.Group className="mb-3" controlId="formExercise1Data">
-                <Form.Control style={{marginBottom: "10px", fontWeight: "bold"}}  type="text" name="exercise1Name" placeholder="Exercise 1 Name" />
-                <Form.Control type="number" name="exercise1Sets" placeholder="Exercise 1 Sets" />
-                <Form.Control type="number" name="exercise1Reps" placeholder="Exercise 1 Reps" />
-                <Form.Control type="number" name="exercise1Weight" placeholder="Exercise 1 Weight" />
-                <Form.Control type="text" name="exercise1Notes" placeholder="Exercise 1 Notes" />
+                <Form.Control style={{marginBottom: "10px", fontWeight: "bold"}}  type="text" name="exercise1Name" placeholder="Exercise 1 Name"  required/>
+                <Form.Control type="number" name="exercise1Sets" placeholder="Exercise 1 Sets"  required/>
+                <Form.Control type="number" name="exercise1Reps" placeholder="Exercise 1 Reps"  required/>
+                <Form.Control type="number" name="exercise1Weight" placeholder="Exercise 1 Weight"  required/>
+                <Form.Control type="text" name="exercise1Notes" placeholder="Exercise 1 Notes"  required/>
               </Form.Group>
             </Col>
             <Col md={4}>
               <Form.Group className="mb-3" controlId="formExercise2Data">
-                <Form.Control style={{marginBottom: "10px", fontWeight: "bold"}}  type="text" name="exercise2Name" placeholder="Exercise 2 Name" />
-                <Form.Control type="number" name="exercise2Sets" placeholder="Exercise 2 Sets" />
-                <Form.Control type="number" name="exercise2Reps" placeholder="Exercise 2 Reps" />
-                <Form.Control type="number" name="exercise2Weight" placeholder="Exercise 2 Weight" />
-                <Form.Control type="text" name="exercise2Notes" placeholder="Exercise 2 Notes" />
+                <Form.Control style={{marginBottom: "10px", fontWeight: "bold"}}  type="text" name="exercise2Name" placeholder="Exercise 2 Name"  required/>
+                <Form.Control type="number" name="exercise2Sets" placeholder="Exercise 2 Sets"  required/>
+                <Form.Control type="number" name="exercise2Reps" placeholder="Exercise 2 Reps"  required/>
+                <Form.Control type="number" name="exercise2Weight" placeholder="Exercise 2 Weight"  required/>
+                <Form.Control type="text" name="exercise2Notes" placeholder="Exercise 2 Notes"  required/>
               </Form.Group>
             </Col>
             <Col md={4}>
               <Form.Group className="mb-3" controlId="formExercise3Data">
-                <Form.Control style={{marginBottom: "10px", fontWeight: "bold"}}  type="text" name="exercise3Name" placeholder="Exercise 3 Name" />
-                <Form.Control type="number" name="exercise3Sets" placeholder="Exercise 3 Sets" />
-                <Form.Control type="number" name="exercise3Reps" placeholder="Exercise 3 Reps" />
-                <Form.Control type="number" name="exercise3Weight" placeholder="Exercise 3 Weight" />
-                <Form.Control type="text" name="exercise3Notes" placeholder="Exercise 3 Notes" />
+                <Form.Control style={{marginBottom: "10px", fontWeight: "bold"}}  type="text" name="exercise3Name" placeholder="Exercise 3 Name"  required/>
+                <Form.Control type="number" name="exercise3Sets" placeholder="Exercise 3 Sets"  required/>
+                <Form.Control type="number" name="exercise3Reps" placeholder="Exercise 3 Reps"  required/>
+                <Form.Control type="number" name="exercise3Weight" placeholder="Exercise 3 Weight"  required/>
+                <Form.Control type="text" name="exercise3Notes" placeholder="Exercise 3 Notes"  required/>
               </Form.Group>
             </Col>
             <Col md={4}>
               <Form.Group className="mb-3" controlId="formExercise4Data">
-                <Form.Control style={{marginBottom: "10px", fontWeight: "bold"}}  type="text" name="exercise4Name" placeholder="Exercise 4 Name" />
-                <Form.Control type="number" name="exercise4Sets" placeholder="Exercise 4 Sets" />
-                <Form.Control type="number" name="exercise4Reps" placeholder="Exercise 4 Reps" />
-                <Form.Control type="number" name="exercise4Weight" placeholder="Exercise 4 Weight" />
-                <Form.Control type="text" name="exercise4Notes" placeholder="Exercise 4 Notes" />
+                <Form.Control style={{marginBottom: "10px", fontWeight: "bold"}}  type="text" name="exercise4Name" placeholder="Exercise 4 Name"  required/>
+                <Form.Control type="number" name="exercise4Sets" placeholder="Exercise 4 Sets"  required/>
+                <Form.Control type="number" name="exercise4Reps" placeholder="Exercise 4 Reps"  required/>
+                <Form.Control type="number" name="exercise4Weight" placeholder="Exercise 4 Weight"  required/>
+                <Form.Control type="text" name="exercise4Notes" placeholder="Exercise 4 Notes"  required/>
               </Form.Group>
             </Col>
             <Col md={4}>
               <Form.Group className="mb-3" controlId="formExercise5Data">
-                <Form.Control style={{marginBottom: "10px", fontWeight: "bold"}}  type="text" name="exercise5Name" placeholder="Exercise 5 Name" />
-                <Form.Control type="number" name="exercise5Sets" placeholder="Exercise 5 Sets" />
-                <Form.Control type="number" name="exercise5Reps" placeholder="Exercise 5 Reps" />
-                <Form.Control type="number" name="exercise5Weight" placeholder="Exercise 5 Weight" />
-                <Form.Control type="text" name="exercise5Notes" placeholder="Exercise 5 Notes" />
+                <Form.Control style={{marginBottom: "10px", fontWeight: "bold"}}  type="text" name="exercise5Name" placeholder="Exercise 5 Name"  required/>
+                <Form.Control type="number" name="exercise5Sets" placeholder="Exercise 5 Sets"  required/>
+                <Form.Control type="number" name="exercise5Reps" placeholder="Exercise 5 Reps"  required/>
+                <Form.Control type="number" name="exercise5Weight" placeholder="Exercise 5 Weight"  required/>
+                <Form.Control type="text" name="exercise5Notes" placeholder="Exercise 5 Notes"  required/>
               </Form.Group>
             </Col>
             <Col md={4}>
               <Form.Group className="mb-3" controlId="formCardioData">
                 <Form.Label>Select Cardio Type:</Form.Label>
-                <Form.Select style={{marginBottom: "15px", fontWeight: "bold"}} name="cardioName" >
+                <Form.Select style={{marginBottom: "15px", fontWeight: "bold"}} name="cardioName"  required>
                   <option disabled defaultValue="">Select Cardio Type</option>
                   <option value="Treadmill">Treadmill</option>
                   <option value="Elliptical">Elliptical</option>
@@ -142,9 +142,9 @@ function ReusableForm(props) {
                   <option value="Stairmaster">Stairmaster</option>
                   <option value="Swim">Swim</option>
                 </Form.Select>
-                <Form.Control type="text" name="cardioDuration" placeholder="Cardio Duration" />
-                <Form.Control type="number" name="cardioDistance" placeholder="Cardio Distance" />
-                <Form.Control type="text" name="cardioNotes" placeholder="Cardio Note" />
+                <Form.Control type="text" name="cardioDuration" placeholder="Cardio Duration"  required/>
+                <Form.Control type="number" name="cardioDistance" placeholder="Cardio Distance"  required/>
+                <Form.Control type="text" name="cardioNotes" placeholder="Cardio Note"  required/>
               </Form.Group>
             </Col>
           </Row>
@@ -154,16 +154,16 @@ function ReusableForm(props) {
             <Col md={4}>
               <Form.Group className="mb-3" controlId="formSleepTime">
                 <Form.Label>Sleep Data:</Form.Label>
-                <Form.Control type="time" name="sleepTime" placeholder="Sleep Time" />
-                <Form.Control type="time" name="wakeTime" placeholder="Wake Time" />
+                <Form.Control type="time" name="sleepTime" placeholder="Sleep Time"  required/>
+                <Form.Control type="time" name="wakeTime" placeholder="Wake Time"  required/>
 
               </Form.Group>
             </Col>
             <Col md={4}>
               <Form.Group className="mb-3" controlId="formSleepQuality">
                 <Form.Label>Daily Health Status:</Form.Label>
-                <Form.Control type="text" name="sleepQuality" placeholder="Sleep Quality Description" />
-                <Form.Select defaultValue="" name="sleepScore">
+                <Form.Control type="text" name="sleepQuality" placeholder="Sleep Quality Notes"  required/>
+                <Form.Select defaultValue="" name="sleepScore" required>
                   <option disabled>Select Daily Status</option>
                   <option value="1">1 - Very Poor: Extremely restless sleep, constant waking up, and unable to fall back asleep easily.</option>
                   <option value="2">2 - Poor: Frequent disturbances, difficulty staying asleep, and feeling tired upon waking.</option>
@@ -182,8 +182,8 @@ function ReusableForm(props) {
             <Col md={4}>
               <Form.Group className="mb-3" controlId="dailyHealthData">
                 <Form.Label>Daily Health Status:</Form.Label>
-                <Form.Control defaultValue="0" type="number" name="dailyWeight" placeholder="Daily Weight (lbs)"/>
-                <Form.Select defaultValue="" name="dailyStatus">
+                <Form.Control type="number" name="dailyWeight" placeholder="Daily Weight (lbs)" min="0" max="500" required/>
+                <Form.Select defaultValue="" name="dailyStatus" required>
                   <option disabled>Select Daily Status</option>
                   <option value="Very Sick">Very Sick: Severely unwell, experiencing intense discomfort or serious illness.</option>
                   <option value="Unwell">Unwell: Feeling sick and experiencing noticeable symptoms affecting daily activities.</option>
