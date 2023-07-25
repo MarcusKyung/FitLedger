@@ -11,21 +11,26 @@ import { Container, Col, Row } from "react-bootstrap";
 
 
 function Data(props){
+  const formattedMMDD = props.entryDate.slice(5, 10); // Extract the month and day part (e.g., "MM-DD")
+  const formattedYear = props.entryDate.slice(0, 4); // Extract the year part (e.g., "YYYY")
 
   return (
     <React.Fragment>
       <Container>
+        <Card style={{width: "100%" , height: "200px"}} onClick = {() => props.whenDataClicked(props.id)}> 
         <Row>
-          <Col />
-          <Col xs={6}>
-            <Card style={{width: "200px", height: "200px"}} onClick = {() => props.whenDataClicked(props.id)}> 
-              <h3 style={{textAlign: "center"}}>{props.entryDate}</h3>
-              <p style={{textAlign: "center", outline: "2px solid red"}}><em>{props.dailyStatus}</em></p>
-              <p style={{textAlign: "center", outline: "2px solid red"}}><em>{props.meal1Calories}</em></p>
-            </Card>
+          <Col style={{ display: "flex", alignItems: "center", paddingTop: "3em" }}>
+            <div style={{ outline: "2px solid red", margin: "auto" }}>
+              <h1 style={{ textAlign: "center" }}>{formattedMMDD}</h1>
+              <h1 style={{ textAlign: "center" }}>{formattedYear}</h1>
+            </div>
           </Col>
-          <Col />
+          <Col>
+            <p style={{textAlign: "center"}}><em>{props.dailyStatus}</em></p>
+            <p style={{textAlign: "center"}}><em>{props.meal1Calories}</em></p>
+          </Col>
         </Row>
+        </Card>
       </Container>
     </React.Fragment>
   );

@@ -10,10 +10,10 @@ export default function DataDetails(props) {
   
   return (
     <React.Fragment>
-      <Container>
-        {/* <Card>
-          <h1>Date : {data.entryDate}</h1>
-        </Card> */}
+      <Container style={{marginTop: "10px"}}>
+        <Card>
+          <h1 style={{textAlign: "center"}}>{data.entryDate}</h1>
+        </Card>
         <CardGroup>
           <Card>
             <Card.Body>
@@ -133,7 +133,6 @@ export default function DataDetails(props) {
               </Card.Text>
             </Card.Body>
             <Card.Footer>
-              <p>Footer text here</p>
             </Card.Footer>
           </Card>
 
@@ -150,7 +149,6 @@ export default function DataDetails(props) {
               </Card.Text>
             </Card.Body>
             <Card.Footer>
-              <p>Footer text here</p>
             </Card.Footer>
           </Card>
         </CardGroup>
@@ -160,12 +158,11 @@ export default function DataDetails(props) {
             <Card.Title>Health Data</Card.Title>
             <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
             <Card.Text>
-              <p>{data.dailyWeight}</p>
-              <p>{data.dailyStatus}</p>
+              <p>Daily Weight: {data.dailyWeight}</p>
+              <p>Daily Status: {data.dailyStatus}</p>
             </Card.Text>
           </Card.Body>
           <Card.Footer>
-            <p>Footer text here</p>
           </Card.Footer>
         </Card>
 

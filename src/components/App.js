@@ -5,7 +5,7 @@ import SignIn from './SignIn';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; 
 import { auth } from "../firebase";
 import TDEECalculator from "./TDEECalculator";
-// import VictoryTest from './VictoryTest'; //Will need to live in DataControl in order to use props
+
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -26,7 +26,6 @@ function App() {
         <Route path="/tdee" element={<TDEECalculator />} />
         <Route path="/" element={<DataControl />} currentUser={currentUser}/>
       </Routes>
-      {/* <VictoryTest /> */}
     </Router>
   );
 }

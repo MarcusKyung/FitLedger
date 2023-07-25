@@ -5,7 +5,6 @@ import DataDetails from './DataDetails'
 import EditDataForm from './EditDataForm'
 import { db, auth } from "./../firebase.js";
 import { collection, addDoc, doc, updateDoc, onSnapshot, deleteDoc, query, where } from "firebase/firestore"; //Import Firestore helper functions
-// import { formatDistanceToNow } from 'date-fns';
 import { Container, Row, Col, Button, ButtonGroup, Card } from 'react-bootstrap';
 import DailyQuote from './DailyQuote';
 
@@ -94,6 +93,7 @@ function DataControl() {
             author: doc.data().author,
           });
         });
+        data.sort((a, b) => new Date(b.entryDate) - new Date(a.entryDate));
         setMainDataList(data);
       },
       (error) => {
@@ -197,10 +197,16 @@ function DataControl() {
 
     return (
       <React.Fragment>
+        <hr />
+        <Container>
+          <div style={{ textAlign: "center" }}>
+            <ButtonGroup style={{ width: "100%", padding: 0 }}>
+              {error ? null : <Button variant="primary" onClick={handleClick}>{buttonText}</Button>}
+            </ButtonGroup>
+          </div>
+        </Container>
         {currentlyVisibleState}
-        <ButtonGroup>
-          {error ? null : <Button variant="primary" onClick={handleClick}>{buttonText}</Button>}
-        </ButtonGroup>
+
       </React.Fragment>
     );
   }
