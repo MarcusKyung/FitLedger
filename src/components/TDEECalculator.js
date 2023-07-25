@@ -9,6 +9,7 @@ function calculateTDEE(bodyWeight, bodyHeight, userAge, activityFactor) {
 
 export default function TDEECalculator() {
   const [tdee, setTDEE] = useState(null);
+  const [tdeeWithDesiredOutcome, setTDEEWithDesiredOutcome] = useState(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -16,8 +17,14 @@ export default function TDEECalculator() {
     const bodyHeight = parseFloat(event.target.elements.bodyHeight.value);
     const userAge = parseFloat(event.target.elements.userAge.value);
     const activityFactor = parseFloat(event.target.elements.activityFactor.value);
+    const desiredOutcome = parseFloat(event.target.elements.desiredOutcome.value);
+
+
     const tdeeValue = calculateTDEE(bodyWeight, bodyHeight, userAge, activityFactor);
     setTDEE(tdeeValue);
+
+    const tdeeWithDesiredOutcomeValue = tdeeValue + desiredOutcome;
+    setTDEEWithDesiredOutcome(tdeeWithDesiredOutcomeValue);
   };
 
   return (
@@ -29,23 +36,37 @@ export default function TDEECalculator() {
             <Card>
               <Card.Body>
                 <Card.Title>TDEE (Total Daily Energy Expenditure)</Card.Title>
-                <Card.Subtitle>TDEE = BMR (Basal Metabolic Rate) * (Activity Factor)</Card.Subtitle>
+                <hr />
                 <Form onSubmit={handleSubmit} style={{marginTop: "10px"}}>
                   <Form.Group controlId="tDEEInput">
-                    <Form.Control type="number" name="bodyWeight" placeholder="Body Weight in lbs" min="0" required/>
+                    <Form.Control type="number" name="bodyWeight" placeholder="Body Weight in lbs" min="60" required/>
                     <Form.Control type="number" name="bodyHeight" placeholder="Height in inches" min="0" required/>
                     <Form.Control type="number" name="userAge" placeholder="Age" min="0" required/>
                     <Form.Select defaultValue="" name="activityFactor" required>
-                      <option disabled>Select Daily Status</option>
+                      <option disabled>Select Activity Factor Status</option>
                       <option value="1.2">Sedentary</option>
                       <option value="1.375">Lightly Active</option>
                       <option value="1.55">Moderately Active</option>
                       <option value="1.725">Very Active</option>
                       <option value="1.9">Super Active</option>
                     </Form.Select>
+                    <Form.Select defaultValue="" name="desiredOutcome" required>
+                      <option disabled>Desired Weekly Outcome</option>
+                      <option value="-500">Lose 1 lb/week</option>
+                      <option value="-250">Lose .5 lb/week</option>
+                      <option value="0">Maintain Weight</option>
+                      <option value="250">Gain .5 lb/week</option>
+                      <option value="500">Gain 1 lb/week</option>
+                    </Form.Select>
                     <Button style={{marginTop: "10px"}} type="submit">Calculate TDEE</Button>
                   </Form.Group>
-                  {tdee !== null && (<p>Your Total Daily Energy Expenditure (TDEE) is: {tdee.toFixed(2)}</p>)}
+                  <br />
+                  <Card>
+                    <Card.Body>
+                    {tdee !== null && (<p>Your Total Daily Energy Expenditure (TDEE) is: <strong>{tdee.toFixed(2)} calories</strong></p>)}
+                    {tdeeWithDesiredOutcome !== null && (<p>Your adjusted Total Daily Energy Expenditure (TDEE) is: <strong>{tdeeWithDesiredOutcome.toFixed(2)} calories</strong></p>)}
+                    </Card.Body>
+                  </Card>
                 </Form>
               </Card.Body>
             </Card>
