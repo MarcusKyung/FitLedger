@@ -17,11 +17,11 @@ function Data(props){
           </Col>
           <Col>
             <div>
-              <p style={{textAlign: "left", background:"lightGrey", padding: "5px", borderRadius: "5px"}}><em>Daily Status: {props.dailyStatus}</em></p>
-              <p style={{textAlign: "left", background:"lightGrey", padding: "5px", borderRadius: "5px"}}><em>Daily Calories: {props.totalCalories} cal</em></p>
-              <p style={{textAlign: "left", background:"lightGrey", padding: "5px", borderRadius: "5px"}}><em>Daily Protein: {props.totalProtein} g</em></p>
-              <p style={{textAlign: "left", background:"lightGrey", padding: "5px", borderRadius: "5px"}}><em>Daily Carbs: {props.totalCarbs} g</em></p>
-              <p style={{textAlign: "left", background:"lightGrey", padding: "5px", borderRadius: "5px"}}><em>Daily Fats: {props.totalFats} g</em></p>
+              <p style={{textAlign: "left"}}><strong>Daily Status:</strong> {props.dailyStatus}</p>
+              <p style={{textAlign: "left"}}><strong>Total Daily Calories:</strong> {props.totalCalories} cal</p>
+              <p style={{textAlign: "left"}}><strong>Total Daily Protein:</strong> {props.totalProtein} g</p>
+              <p style={{textAlign: "left"}}><strong>Total Daily Carbs:</strong> {props.totalCarbs} g</p>
+              <p style={{textAlign: "left"}}><strong>Total Daily Fats:</strong> {props.totalFats} g</p>
             </div>
           </Col>
         </Row>
