@@ -5,6 +5,7 @@ import SignIn from './SignIn';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; 
 import { auth } from "../firebase";
 import TDEECalculator from "./TDEECalculator";
+import MaxRepCalculator from "./MaxRepCalculator";
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
       <Routes>
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/tdee" element={<TDEECalculator />} />
+        <Route path="/1rm" element={<MaxRepCalculator />} />
         <Route path="/" element={<DataControl />} currentUser={currentUser}/>
       </Routes>
     </Router>

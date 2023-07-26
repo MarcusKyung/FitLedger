@@ -4,9 +4,10 @@ import DataList from './DataList'
 import DataDetails from './DataDetails'
 import EditDataForm from './EditDataForm'
 import { db, auth } from "./../firebase.js";
-import { collection, addDoc, doc, updateDoc, onSnapshot, deleteDoc, query, where } from "firebase/firestore"; //Import Firestore helper functions
+import { collection, addDoc, doc, updateDoc, onSnapshot, deleteDoc, query, where } from "firebase/firestore"; 
 import { Container, Row, Col, Button, ButtonGroup, Card } from 'react-bootstrap';
 import DailyQuote from './DailyQuote';
+import Victory from './Victory';
 
 function DataControl() {
   const [formVisibleOnPage, setFormVisibleOnPage] = useState(false);
@@ -202,6 +203,7 @@ function DataControl() {
     return (
       <React.Fragment>
         <hr />
+        <Victory />
         <Container>
           <div style={{ textAlign: "center" }}>
             <ButtonGroup style={{ width: "100%", padding: 0 }}>

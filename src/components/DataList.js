@@ -67,6 +67,10 @@ export default function DataList(props) {
           sleepScore={data.sleepScore}
           dailyWeight={data.dailyWeight}
           dailyStatus={data.dailyStatus}
+          totalCalories={data.totalCalories}
+          totalProtein={data.totalProtein}
+          totalCarbs={data.totalCarbs}
+          totalFats={data.totalFats}
           id={data.id}
           key={data.id}/>
       )}
