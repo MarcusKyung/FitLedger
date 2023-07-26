@@ -65,21 +65,21 @@ function ReusableForm(props) {
               <Form.Group className="mb-3" controlId="formSupplement1Data">
                 <Form.Label>Supplement 1 Entry:</Form.Label>
                 <Form.Control type="text" name="supplement1Name" placeholder="Supplement 1 Name"  required/>
-                <Form.Control type="number" name="supplement1Amount" placeholder="Supplement 1 Amount (mg)"  required/>
+                <Form.Control type="number" name="supplement1Amount" placeholder="Supplement 1 Amount (mg)" min="0" required/>
               </Form.Group>
             </Col>
             <Col md={4}>
               <Form.Group className="mb-3" controlId="formSupplement2Data">
                 <Form.Label>Supplement 2 Entry:</Form.Label>
                 <Form.Control type="text" name="supplement2Name" placeholder="Supplement 2 Name"  required/>
-                <Form.Control type="number" name="supplement2Amount" placeholder="Supplement 2 Amount (mg)"  required/>
+                <Form.Control type="number" name="supplement2Amount" placeholder="Supplement 2 Amount (mg)" min="0" required/>
               </Form.Group>
             </Col>
             <Col md={4}>
               <Form.Group className="mb-3" controlId="formSupplement3Data">
                 <Form.Label>Supplement 3 Entry:</Form.Label>
                 <Form.Control type="text" name="supplement3Name" placeholder="Supplement 3 Name"  required/>
-                <Form.Control type="number" name="supplement3Amount" placeholder="Supplement 3 Amount (mg)"  required/>
+                <Form.Control type="number" name="supplement3Amount" placeholder="Supplement 3 Amount (mg)" min="0" required/>
               </Form.Group>
             </Col>
           </Row>
