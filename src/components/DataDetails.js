@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Container, Card, CardGroup, Accordion, Button } from 'react-bootstrap';
+import { VictoryPie } from 'victory';
 
 export default function DataDetails(props) {
   const { data, onClickingDelete, onClickingEdit } = props;
@@ -60,6 +61,22 @@ export default function DataDetails(props) {
                     <p>
                       {data.supplement3Name} - {data.supplement3Amount} mg
                     </p>
+                  </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item eventKey="4">
+                  <Accordion.Header>Caloric Breakdown by Meal:</Accordion.Header>
+                  <Accordion.Body>
+
+                  <VictoryPie
+                    height={300}
+                    labelRadius={({ innerRadius }) => innerRadius + 40} // Adjust the label position
+                    labels={({ datum }) => `${datum.x}\n${datum.y}`} // Combine x and y values for the label
+                    data={[
+                      { x: "Meal 1", y: data.meal1Calories },
+                      { x: "Meal 2", y: data.meal2Calories },
+                      { x: "Meal 3", y: data.meal3Calories }
+                    ]}
+                    colorScale={["tomato", "gold", "grey"]}/>
                   </Accordion.Body>
                 </Accordion.Item>
               </Accordion>
