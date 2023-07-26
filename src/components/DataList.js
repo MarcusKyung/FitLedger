@@ -36,7 +36,7 @@ export default function DataList(props) {
           exercise1Sets={data.exercise1Sets}
           exercise1Reps={data.exercise1Reps}
           exercise1Weight={data.exercise1Weight}
-          exercise1Note={data.exercise1Note}
+          exercise1Notes={data.exercise1Notes}
           exercise2Name={data.exercise2Name}
           exercise2Sets={data.exercise2Sets}
           exercise2Reps={data.exercise2Reps}

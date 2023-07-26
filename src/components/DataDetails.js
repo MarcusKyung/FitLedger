@@ -80,7 +80,7 @@ export default function DataDetails(props) {
                       <p>{data.exercise1Sets} Sets</p>
                       <p>{data.exercise1Reps} Reps</p>
                       <p>{data.exercise1Weight} lbs</p>
-                      <p>{data.exercise1Note}</p>
+                      <p>{data.exercise1Notes}</p>
                     </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="1">
@@ -89,7 +89,7 @@ export default function DataDetails(props) {
                       <p>{data.exercise2Sets} Sets</p>
                       <p>{data.exercise2Reps} Reps</p>
                       <p>{data.exercise2Weight} lbs</p>
-                      <p>{data.exercise2Note}</p>
+                      <p>{data.exercise2Notes}</p>
                     </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="2">
@@ -98,7 +98,7 @@ export default function DataDetails(props) {
                       <p>{data.exercise3Sets} Sets</p>
                       <p>{data.exercise3Reps} Reps</p>
                       <p>{data.exercise3Weight} lbs</p>
-                      <p>{data.exercise3Note}</p>
+                      <p>{data.exercise3Notes}</p>
                     </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="3">
@@ -107,7 +107,7 @@ export default function DataDetails(props) {
                       <p>{data.exercise4Sets} Sets</p>
                       <p>{data.exercise4Reps} Reps</p>
                       <p>{data.exercise4Weight} lbs</p>
-                      <p>{data.exercise4Note}</p>
+                      <p>{data.exercise4Notes}</p>
                     </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="4">
@@ -116,7 +116,7 @@ export default function DataDetails(props) {
                       <p>{data.exercise5Sets} Sets</p>
                       <p>{data.exercise5Reps} Reps</p>
                       <p>{data.exercise5Weight} lbs</p>
-                      <p>{data.exercise5Note}</p>
+                      <p>{data.exercise5Notes}</p>
                     </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="5">

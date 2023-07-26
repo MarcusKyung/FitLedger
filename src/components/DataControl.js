@@ -4,7 +4,7 @@ import DataList from './DataList'
 import DataDetails from './DataDetails'
 import EditDataForm from './EditDataForm'
 import { db, auth } from "./../firebase.js";
-import { collection, addDoc, doc, updateDoc, onSnapshot, deleteDoc, query, where } from "firebase/firestore"; 
+import { collection, setDoc, doc, updateDoc, onSnapshot, deleteDoc, query, where } from "firebase/firestore"; 
 import { Container, Row, Col, Button, ButtonGroup, Card } from 'react-bootstrap';
 import DailyQuote from './DailyQuote';
 import Victory from './Victory';
@@ -59,27 +59,27 @@ function DataControl() {
               exercise1Sets: doc.data().exercise1Sets,
               exercise1Reps: doc.data().exercise1Reps,
               exercise1Weight: doc.data().exercise1Weight,
-              exercise1Note: doc.data().exercise1Note,
+              exercise1Notes: doc.data().exercise1Notes,
             exercise2Name: doc.data().exercise2Name,
               exercise2Sets: doc.data().exercise2Sets,
               exercise2Reps: doc.data().exercise2Reps,
-              exercise2Weight: doc.data().exercise2WEight,
-              exercise2Note: doc.data().exercise2Note,
+              exercise2Weight: doc.data().exercise2Weight,
+              exercise2Notes: doc.data().exercise2Notes,
             exercise3Name: doc.data().exercise3Name,
               exercise3Sets: doc.data().exercise3Sets,
               exercise3Reps: doc.data().exercise3Reps,
               exercise3Weight: doc.data().exercise3Weight,
-              exercise3Note: doc.data().exercise3Note,
+              exercise3Notes: doc.data().exercise3Notes,
             exercise4Name: doc.data().exercise4Name,
               exercise4Sets: doc.data().exercise4Sets,
               exercise4Reps: doc.data().exercise4Reps,
               exercise4Weight: doc.data().exercise4Weight,
-              exercise4Note: doc.data().exercise4Note,
+              exercise4Notes: doc.data().exercise4Notes,
             exercise5Name: doc.data().exercise5Name,
               exercise5Sets: doc.data().exercise5Sets,
               exercise5Reps: doc.data().exercise5Reps,
               exercise5Weight: doc.data().exercise5Weight,
-              exercise5Note: doc.data().exercise5Note,
+              exercise5Notes: doc.data().exercise5Notes,
             cardioName: doc.data().cardioName,
               cardioDuration: doc.data().cardioDuration,
               cardioDistance: doc.data().cardioDistance,
@@ -138,7 +138,9 @@ function DataControl() {
 
   const handleAddingNewDataToList = async (newDataEntry) => {
     newDataEntry.author = auth.currentUser.email;
-    await addDoc(collection(db, "data"), newDataEntry); 
+    const dataId = newDataEntry.entryDate;
+    const dataRef = doc(db, "data", dataId);
+    await setDoc(dataRef, newDataEntry);
     setFormVisibleOnPage(false); 
   };
 
@@ -146,7 +148,6 @@ function DataControl() {
     const selection = mainDataList.filter((data) => data.id === id)[0];
     setSelectedData(selection);
   };
-
 
   if (auth.currentUser == null) {
     return (

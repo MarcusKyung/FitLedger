@@ -35,7 +35,7 @@ const { data } = props;
         exercise1Sets: parseInt(event.target.exercise1Sets.value),
         exercise1Reps: parseInt(event.target.exercise1Reps.value),
         exercise1Weight: parseInt(event.target.exercise1Weight.value),
-        exercise1s: event.target.exercise1Notes.value,
+        exercise1Notes: event.target.exercise1Notes.value,
       exercise2Name: event.target.exercise2Name.value,
         exercise2Sets: parseInt(event.target.exercise2Sets.value),
         exercise2Reps: parseInt(event.target.exercise2Reps.value),
@@ -75,6 +75,7 @@ const { data } = props;
     <React.Fragment>
       <ReusableForm 
         formSubmissionHandler={handleEditDataFormSubmission}
+        initialData={data}
         buttonText="Update Data Entry" />
     </React.Fragment>
   );
