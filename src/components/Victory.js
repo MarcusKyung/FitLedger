@@ -1,83 +1,98 @@
-import React from 'react';
-import { VictoryBar, VictoryChart, VictoryAxis, VictoryTheme, VictoryStack } from 'victory';
-import Card from "react-bootstrap/Card";
+import React, { useEffect, useState } from 'react';
+import { VictoryBar, VictoryChart, VictoryAxis, VictoryTheme } from 'victory';
+import { Card, Row, Col } from "react-bootstrap";
+import Accordion from "react-bootstrap/Accordion";
+import { db } from "./../firebase.js";
+import { getDocs, collection, query, orderBy, limit, onSnapshot } from 'firebase/firestore';
 
-const selectedDay = [
-  { date: 7, waterIntake: 50 },
-];
 
-const selectedDayMinusOne = [
-  { date: 6, waterIntake: 150 },
-];
 
-const selectedDayMinusTwo = [
-  { date: 5, waterIntake: 125 },
-];
+export default function Victory() {
+  const [waterIntakeData, setWaterIntakeData] = useState([]);
 
-const selectedDayMinusThree = [
-  { date: 4, waterIntake: 100 },
-];
+  useEffect(() => {
+    const fetchWaterIntake = async () => {
+      try {
+        const CollectionRef = collection(db, 'data');
+        const queryRef = query(CollectionRef, orderBy('entryDate', 'desc'), limit(7));
+        const snapshot = await getDocs(queryRef);
+        const documents = snapshot.docs.map((doc) => doc.data());
+        const reversed = documents.reverse();
+        setWaterIntakeData(reversed);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
 
-const selectedDayMinusFour = [
-  { date: 3, waterIntake: 75 },
-];
+    fetchWaterIntake();
 
-const selectedDayMinusFive = [
-  { date: 2, waterIntake: 50 },
-];
+    const CollectionRef = collection(db, 'data');
+    const queryRef = query(CollectionRef, orderBy('entryDate', 'desc'), limit(7));
+    const unsubscribe = onSnapshot(queryRef, (snapshot) => {
+      const documents = snapshot.docs.map((doc) => doc.data());
+      const reversed = documents.reverse();
+      setWaterIntakeData(reversed);
+      console.log(reversed);
+    });
 
-const selectedDayMinusSix = [
-  { date: 1, waterIntake: 25 },
-];
+    return () => unsubscribe();
+  }, []);
 
-const Main = () => {
   const getColor = (value) => {
     if (value >= 100) {
-      return "green"; // If water intake is over 100 oz, set the color to green
+      return 'green';
     } else if (value < 50) {
-      return "red"; // If water intake is under 50 oz, set the color to red
+      return 'red';
     } else {
-      return "orange"; // For values in between, set the color to orange
+      return 'orange';
     }
   };
 
   const legendData = [
     { label: 'Water Intake >= 100 oz', color: 'green' },
+    { label: 'Water Intake 50-100 oz', color: 'orange' },
     { label: 'Water Intake < 50 oz', color: 'red' },
-    { label: 'Water Intake between 50 and 100 oz', color: 'orange' },
   ];
+
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // Month (January is 0)
+    const day = String(date.getDate()).padStart(2, '0'); // Day of the month
+    return `${month}-${day}`;
+  };
 
   return (
     <React.Fragment>
-      
-      <Card>
-      <div style={{ width: "700px" }}>
-        <h1>Last 7 Day Water Intake</h1>
-        <VictoryChart domainPadding={10} theme={VictoryTheme.material}>
-          <VictoryAxis tickValues={["-6", "-5", "-4", "-3", "-2", "-1", "Today"]} />
-          <VictoryAxis dependentAxis tickFormat={(x) => `${x / 1}oz`} />
-          <VictoryStack colorScale="warm">
-            <VictoryBar data={selectedDayMinusSix} x="date" y="waterIntake" style={{ data: { fill: ({ datum }) => getColor(datum.waterIntake), }, }} />
-            <VictoryBar data={selectedDayMinusFive} x="date" y="waterIntake" style={{ data: { fill: ({ datum }) => getColor(datum.waterIntake),  }, }} />
-            <VictoryBar data={selectedDayMinusFour} x="date" y="waterIntake" style={{ data: { fill: ({ datum }) => getColor(datum.waterIntake), }, }} />
-            <VictoryBar data={selectedDayMinusThree} x="date" y="waterIntake" style={{ data: { fill: ({ datum }) => getColor(datum.waterIntake),  }, }} />
-            <VictoryBar data={selectedDayMinusTwo} x="date" y="waterIntake" style={{ data: { fill: ({ datum }) => getColor(datum.waterIntake),  }, }} />
-            <VictoryBar data={selectedDayMinusOne} x="date" y="waterIntake" style={{ data: { fill: ({ datum }) => getColor(datum.waterIntake), }, }} />
-            <VictoryBar data={selectedDay} x="date" y="waterIntake" style={{ data: { fill: ({ datum }) => getColor(datum.waterIntake),  }, }} />
-          </VictoryStack>
-        </VictoryChart>
-      </div>
-      <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
-          {legendData.map((item, index) => (
-            <div key={index} style={{ display: 'flex', alignItems: 'center', marginRight: '20px' }}>
-              <div style={{ width: '20px', height: '20px', backgroundColor: item.color, marginRight: '5px', }}></div>
-              <span>{item.label}</span>
-            </div>
-              ))}
-            </div>
-      </Card>
+      <Accordion>
+        <Accordion.Item eventKey="0">
+          <Accordion.Header>7 Day Water Intake Trend Data</Accordion.Header>
+          <Accordion.Body>
+            <Card>
+              <Card.Body>
+                <Row>
+                  <Col>
+                    <div style={{ height: '50vh' }}>
+                      <VictoryChart width={600} domainPadding={25} theme={VictoryTheme.material} >
+                        <VictoryAxis tickValues={waterIntakeData.map((data) => data.entryDate)} tickFormat={(date) => formatDate(date)} />
+                        <VictoryAxis dependentAxis tickFormat={(x) => `${x / 1}oz`} />
+                        <VictoryBar barRatio={0.5} data={waterIntakeData} x="entryDate" y="waterIntake" style={{ data: { fill: ({ datum }) => getColor(datum.waterIntake) } }} />
+                      </VictoryChart>
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+                      {legendData.map((item, index) => (
+                        <div key={index} style={{ display: 'flex', alignItems: 'center', marginRight: '20px' }}>
+                          <div style={{ width: '20px', height: '20px', backgroundColor: item.color, marginRight: '5px', }}></div>
+                          <span>{item.label}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </Col>
+                </Row>
+              </Card.Body>
+            </Card>
+          </Accordion.Body>
+        </Accordion.Item>
+      </Accordion>
     </React.Fragment>
   );
-};
-
-export default Main;
+}
