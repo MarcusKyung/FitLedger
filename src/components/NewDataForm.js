@@ -31,12 +31,20 @@ function NewDataForm(props){
     return meal1Fats + meal2Fats + meal3Fats;
   }
 
+  // function calculateTimeAsleep(event) {
+  //   const sleepTime = event.target.sleepTime.value;
+  //   const wakeTime = event.target.wakeTime.value;
+
+  //   return timeAsleep;
+  // }
+
 
   function handleNewDataFormSubmission(event) {
     const totalCalories = calculateTotalCalories(event); 
     const totalProtein = calculateTotalProtein(event); 
     const totalCarbs = calculateTotalCarbs(event); 
     const totalFats = calculateTotalFats(event); 
+    // const timeAsleep = calculateTimeAsleep(event);
 
     event.preventDefault();
     props.onNewDataCreation({

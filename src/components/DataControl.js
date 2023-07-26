@@ -205,6 +205,7 @@ function DataControl() {
       <React.Fragment>
         <hr />
         <Victory />
+        <hr />
         <Container>
           <div style={{ textAlign: "center" }}>
             <ButtonGroup style={{ width: "100%", padding: 0 }}>
