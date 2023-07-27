@@ -33,7 +33,7 @@ function Data(props){
                 <VictoryPie
                   height={300}
                   labelRadius={({ innerRadius }) => innerRadius + 40} // Adjust the label position
-                  labels={({ datum }) => `${datum.x}\n${datum.y}`} // Combine x and y values for the label
+                  labels={({ datum }) => `${datum.x}\n${datum.y} g`} // Combine x and y values for the label
                   data={[
                     { x: "Protein", y: props.totalProtein },
                     { x: "Carbs", y: props.totalCarbs },
