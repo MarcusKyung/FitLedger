@@ -7,7 +7,7 @@ import { db, auth } from "./../firebase.js";
 import { collection, setDoc, doc, updateDoc, onSnapshot, deleteDoc, query, where } from "firebase/firestore"; 
 import { Container, Row, Col, Button, ButtonGroup, Card } from 'react-bootstrap';
 import DailyQuote from './DailyQuote';
-import Victory from './Victory';
+import Victory from './VictoryControl';
 
 function DataControl() {
   const [formVisibleOnPage, setFormVisibleOnPage] = useState(false);
