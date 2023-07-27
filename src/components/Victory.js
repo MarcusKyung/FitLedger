@@ -9,6 +9,7 @@ import { getDocs, collection, query, orderBy, limit, onSnapshot } from 'firebase
 
 export default function Victory() {
   const [waterIntakeData, setWaterIntakeData] = useState([]);
+  
 
   useEffect(() => {
     const fetchWaterIntake = async () => {
@@ -56,8 +57,8 @@ export default function Victory() {
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
-    const month = String(date.getMonth() + 1).padStart(2, '0'); // Month (January is 0)
-    const day = String(date.getDate()).padStart(2, '0'); // Day of the month
+    const month = String(date.getMonth() + 1).padStart(2, '0'); 
+    const day = String(date.getDate()).padStart(2, '0'); 
     return `${month}-${day}`;
   };
 
