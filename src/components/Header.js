@@ -13,7 +13,7 @@ function Header(props) {
             <Navbar.Text className="ml-3">
               {props.currentUser ? (`Currently Signed in as: ${props.currentUser.email}`) : ("Not Signed in")}
             </Navbar.Text>              
-            <Link to={props.currentUser ? "/sign-out" : "/sign-in"}>
+            <Link to={"/sign-in"}>
               <Button style={{ marginLeft: "1rem" }} variant="outline-primary">
                 {props.currentUser ? "Sign Out" : "Sign In"}
               </Button>
