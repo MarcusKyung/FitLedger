@@ -3,17 +3,17 @@ import { VictoryChart, VictoryAxis, VictoryTheme, VictoryScatter, VictoryLine } 
 import { Card, Row } from "react-bootstrap";
 import { db, auth } from "../firebase.js";
 import { getDocs, collection, query, orderBy, limit, onSnapshot, where } from 'firebase/firestore';
-import Switch from 'react-switch'; // Import the react-switch component
+import Switch from 'react-switch'; 
 
 export default function TotalCaloriesChart() {
   const [totalCalorieData, setTotalCalorieIntakeData] = useState([]);
-  const [showSevenDays, setShowSevenDays] = useState(true); // Initialize to true to show 7 days initially
+  const [showFourteenDays, setShowFourteenDays] = useState(false); 
 
   useEffect(() => {
     const fetchCalorieIntake = async () => {
       try {
         const CollectionRef = collection(db, 'data');
-        const queryRef = query(CollectionRef, where("author", "==", auth.currentUser.email), orderBy('entryDate', 'desc'), limit(showSevenDays ? 7 : 14)); // Use the showSevenDays state variable to determine the limit
+        const queryRef = query(CollectionRef, where("author", "==", auth.currentUser.email), orderBy('entryDate', 'desc'), limit(showFourteenDays ? 14 : 7)); // Use the showFourteenDays state variable to determine the limit
         const snapshot = await getDocs(queryRef);
         const documents = snapshot.docs.map((doc) => doc.data());
         const reversed = documents.reverse();
@@ -26,7 +26,7 @@ export default function TotalCaloriesChart() {
     fetchCalorieIntake();
 
     const CollectionRef = collection(db, 'data');
-    const queryRef = query(CollectionRef, where("author", "==", auth.currentUser.email), orderBy('entryDate', 'desc'), limit(showSevenDays ? 7 : 14)); // Use the showSevenDays state variable to determine the limit
+    const queryRef = query(CollectionRef, where("author", "==", auth.currentUser.email), orderBy('entryDate', 'desc'), limit(showFourteenDays ? 14 : 7)); // Use the showFourteenDays state variable to determine the limit
     const unsubscribe = onSnapshot(queryRef, (snapshot) => {
       const documents = snapshot.docs.map((doc) => doc.data());
       const reversed = documents.reverse();
@@ -35,7 +35,7 @@ export default function TotalCaloriesChart() {
     });
 
     return () => unsubscribe();
-  }, [showSevenDays]); // Add showSevenDays as a dependency to the useEffect so it refreshes when it changes
+  }, [showFourteenDays]); 
 
   const formatDate = (dateString) => {
     const month = dateString.slice(5, 7);
@@ -50,7 +50,7 @@ export default function TotalCaloriesChart() {
   ];
 
   const handleToggle = () => {
-    setShowSevenDays(!showSevenDays); // Toggle the showSevenDays state
+    setShowFourteenDays(!showFourteenDays); 
   };
 
   return (
@@ -58,19 +58,12 @@ export default function TotalCaloriesChart() {
       <Card>
         <Card.Body>
           <Row style={{ justifyContent: 'center', alignItems: 'center', marginBottom: '10px' }}>
-            <span>Show 7 Days</span>
-            <Switch
-              onChange={handleToggle}
-              checked={showSevenDays}
-              uncheckedIcon={false}
-              checkedIcon={false}
-              onColor="#007bff"
-            />
+            <Switch onChange={handleToggle} checked={showFourteenDays} uncheckedIcon={false} checkedIcon={false} onColor="#007bff"/>
             <span>Show 14 Days</span>
           </Row>
           <div style={{ height: '50vh' }}>
             {totalCalorieData.length > 0 && (
-              <VictoryChart width={600} domainPadding={50} theme={VictoryTheme.material}>
+              <VictoryChart width={800} domainPadding={50} theme={VictoryTheme.material}>
                 <VictoryAxis tickValues={tickValues} tickFormat={(date) => formatDate(date)} />
                 <VictoryAxis dependentAxis tickFormat={(x) => `${x / 1}cals`} />
                 <VictoryScatter data={totalCalorieData} x="entryDate" y="totalCalories" style={{ data: { fill: 'blue' } }} size={5} />
@@ -80,7 +73,7 @@ export default function TotalCaloriesChart() {
           </div>
           <Row style={{ justifyContent: 'center', marginTop: '20px' }}>
             {legendData.map((item, index) => (
-              <div key={index} style={{ display: 'flex', alignItems: 'center', marginRight: '20px' }}>
+              <div key={index} style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
                 <div style={{ width: '20px', height: '20px', backgroundColor: item.color, marginRight: '5px' }}></div>
                 <span>{item.label}</span>
               </div>
