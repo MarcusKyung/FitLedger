@@ -56,9 +56,10 @@ export default function Victory() {
   ];
 
   const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    const month = String(date.getMonth() + 1).padStart(2, '0'); 
-    const day = String(date.getDate()).padStart(2, '0'); 
+    const month = dateString.slice(5, 7)
+    console.log(month);
+    const day = dateString.slice(8, 10)
+    console.log(day);
     return `${month}-${day}`;
   };
 
@@ -73,11 +74,13 @@ export default function Victory() {
                 <Row>
                   <Col>
                     <div style={{ height: '50vh' }}>
-                      <VictoryChart width={600} domainPadding={25} theme={VictoryTheme.material} >
+                    {waterIntakeData.length > 0 && (
+                      <VictoryChart width={600} domainPadding={50} theme={VictoryTheme.material} >
                         <VictoryAxis tickValues={waterIntakeData.map((data) => data.entryDate)} tickFormat={(date) => formatDate(date)} />
                         <VictoryAxis dependentAxis tickFormat={(x) => `${x / 1}oz`} />
                         <VictoryBar barRatio={0.5} data={waterIntakeData} x="entryDate" y="waterIntake" style={{ data: { fill: ({ datum }) => getColor(datum.waterIntake) } }} />
                       </VictoryChart>
+                    )}
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
                       {legendData.map((item, index) => (
