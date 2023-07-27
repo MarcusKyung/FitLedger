@@ -36,7 +36,7 @@ const OneRepMaxCalculator = () => {
                 <Form controlId="maxRepInput">
                   <Form.Group>
                     <Form.Control type="number" name="weightLifted" placeholder="Weight Lifted (in lbs)" value={weight} onChange={(e) => setWeight(e.target.value)} required/>
-                    <Form.Control type="number" name="repetitions" placeholder="Repetitions" value={repetitions} onChange={(e) => setRepetitions(e.target.value)} required />
+                    <Form.Control type="number" name="repetitions" placeholder="Repetitions" min="1" max="20" value={repetitions} onChange={(e) => setRepetitions(e.target.value)} required />
                     <br />
                     <Button id="calculateBtn" onClick={calculateOneRepMax}>Calculate One-Rep Max</Button>
                   </Form.Group>
