@@ -151,8 +151,6 @@ function DataControl() {
     setSelectedData(selection);
   };
 
-/////////////////
-
   const handleSearch = async (event) => {
     event.preventDefault();
 
@@ -174,11 +172,6 @@ function DataControl() {
   const handleDateChange = (event) => {
     setSearchDate(event.target.value);
   };
-
-/////////////////
-
-
-
 
 
   if (auth.currentUser == null) {
@@ -238,7 +231,7 @@ function DataControl() {
         <hr />
         <Victory />
         <hr />
-        <Container>
+        <Container style={{marginBottom: "10px"}}>
           <Card>
             <Form onSubmit={handleSearch}>
               <Form.Group controlId="searchDate">
