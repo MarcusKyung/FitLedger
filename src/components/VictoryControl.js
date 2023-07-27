@@ -3,6 +3,7 @@ import Accordion from "react-bootstrap/Accordion";
 import WaterIntakeChart from './WaterIntakeChart';
 import TotalCaloriesChart from './TotalCaloriesChart';
 import MacrobreakdownChart from './MacrobreakdownChart';
+import DailyWeightChart from './DailyWeightChart';
 
 
 
@@ -26,6 +27,12 @@ export default function Victory() {
           <Accordion.Header>7-14 Day Macronutrient Intake Chart</Accordion.Header>
           <Accordion.Body>
             <MacrobreakdownChart />
+          </Accordion.Body>
+        </Accordion.Item>
+        <Accordion.Item eventKey="3">
+          <Accordion.Header>7-14 Day Daily Weight Chart</Accordion.Header>
+          <Accordion.Body>
+          <DailyWeightChart />
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>
