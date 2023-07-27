@@ -3,13 +3,6 @@ import PropTypes from "prop-types";
 import ReusableForm from "./ReusableForm";
 
 function NewDataForm(props){
-  function calculateTotalCalories(event) {
-    const meal1Calories = parseInt(event.target.meal1Calories.value);
-    const meal2Calories = parseInt(event.target.meal2Calories.value);
-    const meal3Calories = parseInt(event.target.meal3Calories.value);
-    return meal1Calories + meal2Calories + meal3Calories;
-  }
-
   function calculateTotalProtein(event) {
     const meal1Protein = parseInt(event.target.meal1Protein.value);
     const meal2Protein = parseInt(event.target.meal2Protein.value);
@@ -31,6 +24,27 @@ function NewDataForm(props){
     return meal1Fats + meal2Fats + meal3Fats;
   }
 
+  function calculateMeal1Calories(event) {
+    const meal1Protein = parseInt(event.target.meal1Protein.value);
+    const meal1Carbs = parseInt(event.target.meal1Carbs.value);
+    const meal1Fats = parseInt(event.target.meal1Fats.value);
+    return (meal1Protein * 4) + (meal1Carbs * 4) + (meal1Fats * 9);
+  }
+
+  function calculateMeal2Calories(event) {
+    const meal2Protein = parseInt(event.target.meal2Protein.value);
+    const meal2Carbs = parseInt(event.target.meal2Carbs.value);
+    const meal2Fats = parseInt(event.target.meal2Fats.value);
+    return (meal2Protein * 4) + (meal2Carbs * 4) + (meal2Fats * 9);
+  }
+
+  function calculateMeal3Calories(event) {
+    const meal3Protein = parseInt(event.target.meal3Protein.value);
+    const meal3Carbs = parseInt(event.target.meal3Carbs.value);
+    const meal3Fats = parseInt(event.target.meal3Fats.value);
+    return (meal3Protein * 4) + (meal3Carbs * 4) + (meal3Fats * 9);
+  }
+
   // function calculateTimeAsleep(event) {
   //   const sleepTime = event.target.sleepTime.value;
   //   const wakeTime = event.target.wakeTime.value;
@@ -40,27 +54,30 @@ function NewDataForm(props){
 
 
   function handleNewDataFormSubmission(event) {
-    const totalCalories = calculateTotalCalories(event); 
     const totalProtein = calculateTotalProtein(event); 
     const totalCarbs = calculateTotalCarbs(event); 
     const totalFats = calculateTotalFats(event); 
+    const meal1Calories = calculateMeal1Calories(event);
+    const meal2Calories = calculateMeal2Calories(event);
+    const meal3Calories = calculateMeal3Calories(event);
+    const totalCalories = meal1Calories + meal2Calories + meal3Calories;
     // const timeAsleep = calculateTimeAsleep(event);
 
     event.preventDefault();
     props.onNewDataCreation({
       entryDate: event.target.entryDate.value,
       meal1Name: event.target.meal1Name.value,
-        meal1Calories: parseInt(event.target.meal1Calories.value),
+        meal1Calories: meal1Calories,
         meal1Protein: parseInt(event.target.meal1Protein.value),
         meal1Carbs: parseInt(event.target.meal1Carbs.value),
         meal1Fats: parseInt(event.target.meal1Fats.value), 
       meal2Name: event.target.meal2Name.value,
-        meal2Calories: parseInt(event.target.meal2Calories.value),
+        meal2Calories: meal2Calories,
         meal2Protein: parseInt(event.target.meal2Protein.value),
         meal2Carbs: parseInt(event.target.meal2Carbs.value),
         meal2Fats: parseInt(event.target.meal2Fats.value),
       meal3Name: event.target.meal3Name.value,
-        meal3Calories: parseInt(event.target.meal3Calories.value),
+        meal3Calories: meal3Calories,
         meal3Protein:  parseInt(event.target.meal3Protein.value),
         meal3Carbs: parseInt(event.target.meal3Carbs.value),
         meal3Fats: parseInt(event.target.meal3Fats.value),
@@ -110,7 +127,6 @@ function NewDataForm(props){
       totalProtein: totalProtein,
       totalCarbs: totalCarbs,
       totalFats: totalFats,
-
     });
   }
 

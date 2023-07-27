@@ -25,7 +25,6 @@ function ReusableForm(props) {
             <Col md={4}>
               <Form.Group className="mb-3" controlId="formMeal1Data">
                 <Form.Control style={{marginBottom: "10px", fontWeight: "bold"}} type="text" name="meal1Name" placeholder="Meal 1 Name" required/>
-                <Form.Control type="number" name="meal1Calories" placeholder="Meal 1 Calories (cal)" required/>
                 <Form.Control type="number" name="meal1Protein" placeholder="Meal 1 Protein (g)" required/>
                 <Form.Control type="number" name="meal1Carbs" placeholder="Meal 1 Carbs (g)" required/>
                 <Form.Control type="number" name="meal1Fats" placeholder="Meal 1 Fats (g)" required/>
@@ -34,7 +33,6 @@ function ReusableForm(props) {
             <Col md={4}>
               <Form.Group className="mb-3" controlId="formMeal1Data">
                 <Form.Control style={{marginBottom: "10px", fontWeight: "bold"}} type="text" name="meal2Name" placeholder="Meal 2 Name" required/>
-                <Form.Control type="number" name="meal2Calories" placeholder="Meal 2 Calories (cal)" required/>
                 <Form.Control type="number" name="meal2Protein" placeholder="Meal 2 Protein (g)" required/>
                 <Form.Control type="number" name="meal2Carbs" placeholder="Meal 2 Carbs (g)" required/>
                 <Form.Control type="number" name="meal2Fats" placeholder="Meal 2 Fats (g)" required/>
@@ -43,7 +41,6 @@ function ReusableForm(props) {
             <Col md={4}>
               <Form.Group className="mb-3" controlId="formMeal1Data">
                 <Form.Control style={{marginBottom: "10px", fontWeight: "bold"}} type="text" name="meal3Name" placeholder="Meal 3 Name"  required/>
-                <Form.Control type="number" name="meal3Calories" placeholder="Meal 3 Calories (cal)" required/>
                 <Form.Control type="number" name="meal3Protein" placeholder="Meal 3 Protein (g)" required/>
                 <Form.Control type="number" name="meal3Carbs" placeholder="Meal 3 Carbs (g)" required/>
                 <Form.Control type="number" name="meal3Fats" placeholder="Meal 3 Fats (g)" required/>
@@ -141,6 +138,7 @@ function ReusableForm(props) {
                   <option value="Cycling">Cycling</option>
                   <option value="Stairmaster">Stairmaster</option>
                   <option value="Swim">Swim</option>
+                  <option value="None">None</option>
                 </Form.Select>
                 <Form.Control type="text" name="cardioDuration" placeholder="Cardio Duration"  required/>
                 <Form.Control type="number" name="cardioDistance" placeholder="Cardio Distance"  required/>
@@ -161,7 +159,7 @@ function ReusableForm(props) {
             </Col>
             <Col md={4}>
               <Form.Group className="mb-3" controlId="formSleepQuality">
-                <Form.Label>Daily Health Status:</Form.Label>
+                <Form.Label>Daily Sleep Status:</Form.Label>
                 <Form.Control type="text" name="sleepQuality" placeholder="Sleep Quality Notes"  required/>
                 <Form.Select defaultValue="" name="sleepScore" required>
                   <option disabled>Select Daily Status</option>
@@ -187,7 +185,7 @@ function ReusableForm(props) {
                   <option disabled>Select Daily Status</option>
                   <option value="Very Sick">Very Sick: Severely unwell, experiencing intense discomfort or serious illness.</option>
                   <option value="Unwell">Unwell: Feeling sick and experiencing noticeable symptoms affecting daily activities.</option>
-                  <option value="SicUnder the Weatherk">Under the Weather: Slightly unwell, with mild symptoms but still able to function.</option>
+                  <option value="Under the Weatherk">Under the Weather: Slightly unwell, with mild symptoms but still able to function.</option>
                   <option value="Struggling">Struggling: Facing health challenges, not feeling well enough to be fully active.</option>
                   <option value="Okay">Okay: Neither sick nor healthy, feeling average or mediocre in terms of well-being.</option>
                   <option value="Fairly Healthy">Fairly Healthy: Generally well, but with some minor issues or lingering tiredness.</option>
