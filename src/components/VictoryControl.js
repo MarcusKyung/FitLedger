@@ -4,6 +4,7 @@ import WaterIntakeChart from './WaterIntakeChart';
 import TotalCaloriesChart from './TotalCaloriesChart';
 import MacrobreakdownChart from './MacrobreakdownChart';
 import DailyWeightChart from './DailyWeightChart';
+import CardioBubbleChart from './CardioBubbleChart';
 
 
 
@@ -33,6 +34,12 @@ export default function Victory() {
           <Accordion.Header>7-14 Day Daily Weight Chart</Accordion.Header>
           <Accordion.Body>
           <DailyWeightChart />
+          </Accordion.Body>
+        </Accordion.Item>
+        <Accordion.Item eventKey="4">
+          <Accordion.Header>7-14 Day Cardio Duration/Distance Chart</Accordion.Header>
+          <Accordion.Body>
+          <CardioBubbleChart />
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>
