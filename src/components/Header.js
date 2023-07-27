@@ -24,7 +24,7 @@ function Header(props) {
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item eventKey="1" as={Link} to="/tdee">TDEE Calculator</NavDropdown.Item>
               <NavDropdown.Item eventKey="2" as={Link} to="/1rm">1RM Calculator</NavDropdown.Item>
-              <NavDropdown.Item eventKey="3" href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Item eventKey="3" as={Link} to="/workout-builder">Workout Builder</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item eventKey="4" href="#action/3.4">Separated link</NavDropdown.Item>
             </NavDropdown>

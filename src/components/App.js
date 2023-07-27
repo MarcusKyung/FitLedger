@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { auth } from "../firebase";
 import TDEECalculator from "./TDEECalculator";
 import MaxRepCalculator from "./MaxRepCalculator";
+import WorkoutBuilder from "./WorkoutBuilder";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/tdee" element={<TDEECalculator />} />
         <Route path="/1rm" element={<MaxRepCalculator />} />
+        <Route path="/workout-builder" element={<WorkoutBuilder />} />
         <Route path="/" element={<DataControl />} currentUser={currentUser}/>
       </Routes>
     </Router>
