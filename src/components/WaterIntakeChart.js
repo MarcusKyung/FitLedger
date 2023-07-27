@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { VictoryBar, VictoryChart, VictoryAxis, VictoryTheme } from 'victory';
-import { Card, Row, Col } from "react-bootstrap";
-import Accordion from "react-bootstrap/Accordion";
-import { db, auth } from "./../firebase.js";
+import { Card, Row } from "react-bootstrap";
+import { db, auth } from "../firebase.js";
 import { getDocs, collection, query, orderBy, limit, onSnapshot, where } from 'firebase/firestore';
 
 
 
-export default function Victory({}) {
+export default function WaterIntakeChart() {
   const [waterIntakeData, setWaterIntakeData] = useState([]);
   
   useEffect(() => {
@@ -64,14 +63,9 @@ export default function Victory({}) {
 
   return (
     <React.Fragment>
-      <Accordion>
-        <Accordion.Item eventKey="0">
-          <Accordion.Header>7 Day Water Intake Trend Data</Accordion.Header>
-          <Accordion.Body>
             <Card>
               <Card.Body>
                 <Row>
-                  <Col>
                     <div style={{ height: '50vh' }}>
                     {waterIntakeData.length > 0 && (
                       <VictoryChart width={600} domainPadding={50} theme={VictoryTheme.material} >
@@ -89,13 +83,9 @@ export default function Victory({}) {
                         </div>
                       ))}
                     </div>
-                  </Col>
                 </Row>
               </Card.Body>
             </Card>
-          </Accordion.Body>
-        </Accordion.Item>
-      </Accordion>
     </React.Fragment>
   );
 }
