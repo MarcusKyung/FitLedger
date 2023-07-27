@@ -1,13 +1,12 @@
 import { React, useState, useEffect } from "react";
 import Header from './Header';
 import DataControl from './DataControl';
-import SignIn from './SignIn';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; 
 import { auth } from "../firebase";
 import TDEECalculator from "./TDEECalculator";
 import MaxRepCalculator from "./MaxRepCalculator";
-import WorkoutBuilder from "./WorkoutBuilder";
-
+// import WorkoutBuilder from "./WorkoutBuilder";
+import SignIn from './SignIn';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -27,7 +26,7 @@ function App() {
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/tdee" element={<TDEECalculator />} />
         <Route path="/1rm" element={<MaxRepCalculator />} />
-        <Route path="/workout-builder" element={<WorkoutBuilder />} />
+        {/* <Route path="/workout-builder" element={<WorkoutBuilder />} /> */}
         <Route path="/" element={<DataControl />} currentUser={currentUser}/>
       </Routes>
     </Router>
