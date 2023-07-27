@@ -9,19 +9,16 @@ export default function DailyQuote() {
   useEffect(() => {
     const fetchRandomQuote = async () => {
       try {
-        // Get the total number of documents in the "fitnessQuotes" collection
+
         const collectionRef = collection(db, 'fitnessQuotes');
         const queryRef = query(collectionRef, orderBy('ID'), limit(7));
         const snapshot = await getDocs(queryRef);
 
-        // Convert the snapshot into an array of documents
         const documents = snapshot.docs.map((doc) => doc.data());
 
         if (documents.length > 0) {
-          // Generate a random index within the fetched documents range
           const randomIndex = Math.floor(Math.random() * documents.length);
 
-          // Set the random quote and author in the state
           setQuote(documents[randomIndex].Quote);
           setAuthor(documents[randomIndex].Author);
         } else {

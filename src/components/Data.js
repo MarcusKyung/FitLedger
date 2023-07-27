@@ -32,8 +32,8 @@ function Data(props){
                 <h6 style={{ textAlign: "center" }}>Total Caloric Intake: {props.totalCalories}</h6>
                 <VictoryPie
                   height={300}
-                  labelRadius={({ innerRadius }) => innerRadius + 40} // Adjust the label position
-                  labels={({ datum }) => `${datum.x}\n${datum.y} g`} // Combine x and y values for the label
+                  labelRadius={({ innerRadius }) => innerRadius + 40}
+                  labels={({ datum }) => `${datum.x}\n${datum.y} g`}
                   data={[
                     { x: "Protein", y: props.totalProtein },
                     { x: "Carbs", y: props.totalCarbs },
