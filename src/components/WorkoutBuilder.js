@@ -1,5 +1,6 @@
 // import React, { useState } from "react";
-// import { db } from "./../firebase.js";
+// import { db } from "../firebase.js";
+
 
 // export default function WorkoutBuilder() {
 //   const [selectedOption, setSelectedOption] = useState("");
@@ -75,4 +76,3 @@
 //     </form>
 //   );
 // }
-

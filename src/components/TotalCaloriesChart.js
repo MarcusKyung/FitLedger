@@ -13,7 +13,7 @@ export default function TotalCaloriesChart() {
     const fetchCalorieIntake = async () => {
       try {
         const CollectionRef = collection(db, 'data');
-        const queryRef = query(CollectionRef, where("author", "==", auth.currentUser.email), orderBy('entryDate', 'desc'), limit(showFourteenDays ? 14 : 7)); // Use the showFourteenDays state variable to determine the limit
+        const queryRef = query(CollectionRef, where("author", "==", auth.currentUser.email), orderBy('entryDate', 'desc'), limit(showFourteenDays ? 14 : 7)); 
         const snapshot = await getDocs(queryRef);
         const documents = snapshot.docs.map((doc) => doc.data());
         const reversed = documents.reverse();
@@ -26,7 +26,7 @@ export default function TotalCaloriesChart() {
     fetchCalorieIntake();
 
     const CollectionRef = collection(db, 'data');
-    const queryRef = query(CollectionRef, where("author", "==", auth.currentUser.email), orderBy('entryDate', 'desc'), limit(showFourteenDays ? 14 : 7)); // Use the showFourteenDays state variable to determine the limit
+    const queryRef = query(CollectionRef, where("author", "==", auth.currentUser.email), orderBy('entryDate', 'desc'), limit(showFourteenDays ? 14 : 7)); 
     const unsubscribe = onSnapshot(queryRef, (snapshot) => {
       const documents = snapshot.docs.map((doc) => doc.data());
       const reversed = documents.reverse();
