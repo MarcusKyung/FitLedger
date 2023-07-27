@@ -4,8 +4,8 @@ import DataList from './DataList'
 import DataDetails from './DataDetails'
 import EditDataForm from './EditDataForm'
 import { db, auth } from "./../firebase.js";
-import { collection, setDoc, doc, updateDoc, onSnapshot, deleteDoc, query, where } from "firebase/firestore"; 
-import { Container, Row, Col, Button, ButtonGroup, Card } from 'react-bootstrap';
+import { collection, setDoc, doc, updateDoc, onSnapshot, deleteDoc, query, where, getDocs } from "firebase/firestore"; 
+import { Container, Row, Col, Button, ButtonGroup, Card, Form } from 'react-bootstrap';
 import DailyQuote from './DailyQuote';
 import Victory from './VictoryControl';
 
@@ -15,6 +15,8 @@ function DataControl() {
   const [selectedData, setSelectedData] = useState(null);
   const [editing, setEditing] = useState(false);
   const [error, setError] = useState(null);
+  const [searchDate, setSearchDate] = useState('');
+
 
   useEffect(() => {
     let queryRef;
@@ -149,6 +151,36 @@ function DataControl() {
     setSelectedData(selection);
   };
 
+/////////////////
+
+  const handleSearch = async (event) => {
+    event.preventDefault();
+
+    try {
+      const queryRef = query(collection(db, 'data'), where('entryDate', '==', searchDate));
+      const snapshot = await getDocs(queryRef);
+
+      if (!snapshot.empty) {
+        const data = snapshot.docs[0].data();
+        setSelectedData(data); 
+      } else {
+        setSelectedData(null); 
+      }
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
+  const handleDateChange = (event) => {
+    setSearchDate(event.target.value);
+  };
+
+/////////////////
+
+
+
+
+
   if (auth.currentUser == null) {
     return (
       <Container fluid className="d-flex justify-content-center align-items-center vh-100">
@@ -207,6 +239,15 @@ function DataControl() {
         <Victory />
         <hr />
         <Container>
+          <Card>
+            <Form onSubmit={handleSearch}>
+              <Form.Group controlId="searchDate">
+                <Form.Control placeholder="Search Entries: Date (YYYY-MM-DD) + Enter" type="text" value={searchDate} onChange={handleDateChange} />
+              </Form.Group>
+            </Form>
+          </Card>
+        </Container>
+        <Container>
           <div style={{ textAlign: "center" }}>
             <ButtonGroup style={{ width: "100%", padding: 0 }}>
               {error ? null : <Button variant="primary" onClick={handleClick}>{buttonText}</Button>}
@@ -214,7 +255,7 @@ function DataControl() {
           </div>
         </Container>
         {currentlyVisibleState}
-
+        
       </React.Fragment>
     );
   }
