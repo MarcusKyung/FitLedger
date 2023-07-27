@@ -2,20 +2,19 @@ import React, { useEffect, useState } from 'react';
 import { VictoryBar, VictoryChart, VictoryAxis, VictoryTheme } from 'victory';
 import { Card, Row, Col } from "react-bootstrap";
 import Accordion from "react-bootstrap/Accordion";
-import { db } from "./../firebase.js";
-import { getDocs, collection, query, orderBy, limit, onSnapshot } from 'firebase/firestore';
+import { db, auth } from "./../firebase.js";
+import { getDocs, collection, query, orderBy, limit, onSnapshot, where } from 'firebase/firestore';
 
 
 
-export default function Victory() {
+export default function Victory({}) {
   const [waterIntakeData, setWaterIntakeData] = useState([]);
   
-
   useEffect(() => {
     const fetchWaterIntake = async () => {
       try {
         const CollectionRef = collection(db, 'data');
-        const queryRef = query(CollectionRef, orderBy('entryDate', 'desc'), limit(7));
+        const queryRef = query(CollectionRef, where("author", "==", auth.currentUser.email), orderBy('entryDate', 'desc'), limit(7));
         const snapshot = await getDocs(queryRef);
         const documents = snapshot.docs.map((doc) => doc.data());
         const reversed = documents.reverse();
@@ -28,7 +27,7 @@ export default function Victory() {
     fetchWaterIntake();
 
     const CollectionRef = collection(db, 'data');
-    const queryRef = query(CollectionRef, orderBy('entryDate', 'desc'), limit(7));
+    const queryRef = query(CollectionRef, where("author", "==", auth.currentUser.email), orderBy('entryDate', 'desc'), limit(7));
     const unsubscribe = onSnapshot(queryRef, (snapshot) => {
       const documents = snapshot.docs.map((doc) => doc.data());
       const reversed = documents.reverse();
