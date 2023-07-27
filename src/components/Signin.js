@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { auth } from "../firebase.js";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, } from "firebase/auth";
 import { Card, Row, Col, Button, Form, Container } from 'react-bootstrap';
+import { useNavigate } from "react-router-dom"; 
 
 function SignIn() {
+  const navigate = useNavigate();
   const [signUpSuccess, setSignUpSuccess] = useState(null);
   const [signInSuccess, setSignInSuccess] = useState(null);
   const [signOutSuccess, setSignOutSuccess] = useState(null);
@@ -22,8 +24,8 @@ function SignIn() {
     createUserWithEmailAndPassword(auth, email, password) 
       .then((userCredential) => {
         setSignUpSuccess(
-          `You've successfully signed up, ${userCredential.user.email}!`
-        );
+          `You've successfully signed up, ${userCredential.user.email}!`);
+          navigate("/");
       })
       .catch((error) => { 
         setSignUpSuccess(`There was an error signing up: ${error.message}!`);
@@ -37,8 +39,8 @@ function SignIn() {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         setSignInSuccess(
-          `You've successfully signed in as ${userCredential.user.email}!`
-        );
+          `You've successfully signed in as ${userCredential.user.email}!`);
+          navigate("/"); 
       })
       .catch((error) => {
         setSignInSuccess(`There was an error signing in: ${error.message}!`);
@@ -49,6 +51,7 @@ function SignIn() {
     signOut(auth)
       .then(function () {
         setSignOutSuccess("You have successfully signed out!");
+        navigate("/"); 
       })
       .catch(function (error) {
         setSignOutSuccess(`There was an error signing out: ${error.message}!`);
@@ -100,6 +103,7 @@ function SignIn() {
             <Card.Header><h1>Sign Out</h1></Card.Header>
             <Card.Body>
               {signOutSuccess}
+              <br />
               <Button variant="primary" onClick={doSignOut}>Sign Out</Button>
             </Card.Body>
           </Card>
