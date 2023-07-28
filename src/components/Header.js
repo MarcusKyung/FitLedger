@@ -8,7 +8,7 @@ function Header(props) {
     <React.Fragment>
       <Navbar expand="lg" className="bg-body-tertiary">
         <Container>
-          <Navbar.Brand>Project Title</Navbar.Brand>
+          <Navbar.Brand>Delta Fitness Tracker</Navbar.Brand>
             <Nav className="ms-auto">
             <Navbar.Text className="ml-3">
               {props.currentUser ? (`Currently Signed in as: ${props.currentUser.email}`) : ("Not Signed in")}

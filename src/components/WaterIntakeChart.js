@@ -60,7 +60,7 @@ export default function WaterIntakeChart() {
   };
 
   const handleToggle = () => {
-    setShowFourteenDays(!showFourteenDays); // Toggle the showFourteenDays state
+    setShowFourteenDays(!showFourteenDays); 
   };
 
   return (
