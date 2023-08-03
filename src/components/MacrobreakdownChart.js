@@ -38,9 +38,9 @@ export default function MacrobreakdownChart() {
   }, [showFourteenDays]); 
 
   const legendData = [
-    { label: 'Total Protein', color: '#2d6efd' },
-    { label: 'Total Carbs', color: '#81b4fe' },
-    { label: 'Total Fats', color: '#dee2e6' },
+    { label: 'Protein (g)', color: '#2d6efd' },
+    { label: 'Carbs (g)', color: '#81b4fe' },
+    { label: 'Fats (g)', color: '#dee2e6' },
   ];
 
   const formatDate = (dateString) => {
