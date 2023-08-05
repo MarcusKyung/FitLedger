@@ -53,7 +53,7 @@ export default function Victory() {
       </Container>
 
 
-      <Modal show={showWeightChart} onHide={handleClose}>
+      <Modal        dialogClassName="modal-90w" show={showWeightChart} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>7/14 Day Daily Weight Chart</Modal.Title>
         </Modal.Header>
