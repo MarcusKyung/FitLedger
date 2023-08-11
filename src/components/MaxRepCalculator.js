@@ -49,10 +49,10 @@ const OneRepMaxCalculator = () => {
           <Col xs={6}>
             <Card>
               <Card.Body>
-                <Card.Title>One-Rep Max Calculator (Brzycki Equation)</Card.Title>
+                <Card.Title>One-Rep Max Calculator</Card.Title>
                 <hr />
                 <Card.Text>
-                  <p>This calculator can be used to estimate your maximum one rep max lift using previous submaximal lift data. This tool utilizes the commonly used Brzycki formula to generate results. Results are most accurate with a submaximal rep count between 1-10.</p>
+                  <p>This calculator can be used to estimate your maximum one rep max lift using previous submaximal lift data. This tool utilizes the commonly used Brzycki and Epley formulas to generate results. Results are most accurate with a submaximal rep count between 1-10.</p>
                 </Card.Text>
                 <Form controlId="maxRepInput">
                   <Form.Group>
