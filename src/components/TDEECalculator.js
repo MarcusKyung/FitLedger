@@ -27,6 +27,12 @@ export default function TDEECalculator() {
     setTDEEWithDesiredOutcome(tdeeWithDesiredOutcomeValue);
   };
 
+  const clearFields = () => {
+    setTDEE(null);
+    setTDEEWithDesiredOutcome(null);
+    document.getElementById('tDEEInput').reset();
+  };
+
   return (
     <React.Fragment>
       <Container style={{marginTop: "10px"}}>
@@ -37,7 +43,7 @@ export default function TDEECalculator() {
               <Card.Body>
                 <Card.Title>TDEE (Total Daily Energy Expenditure)</Card.Title>
                 <hr />
-                <Form onSubmit={handleSubmit} style={{marginTop: "10px"}}>
+                <Form id="tDEEInput" onSubmit={handleSubmit} style={{marginTop: "10px"}}>
                   <Form.Group controlId="tDEEInput">
                     <Form.Control type="number" name="bodyWeight" placeholder="Body Weight in lbs" min="60" required/>
                     <Form.Control type="number" name="bodyHeight" placeholder="Height in inches" min="0" required/>
@@ -58,13 +64,16 @@ export default function TDEECalculator() {
                       <option value="250">Gain .5 lb/week</option>
                       <option value="500">Gain 1 lb/week</option>
                     </Form.Select>
-                    <Button style={{marginTop: "10px"}} type="submit">Calculate TDEE</Button>
+                    <div style={{marginTop: "10px"}} className="d-grid gap-2">
+                      <Button style={{marginTop: "10px"}} type="submit">Calculate TDEE</Button>
+                      <Button id="clearBtn" variant="danger" onClick={clearFields}>Clear All</Button>
+                    </div>
                   </Form.Group>
                   <br />
                   <Card>
                     <Card.Body>
                     {tdee !== null && (<p>Your Total Daily Energy Expenditure (TDEE) is: <strong>{tdee.toFixed(2)} calories</strong></p>)}
-                    {tdeeWithDesiredOutcome !== null && (<p>Your adjusted Total Daily Energy Expenditure (TDEE) is: <strong>{tdeeWithDesiredOutcome.toFixed(2)} calories</strong></p>)}
+                    {tdeeWithDesiredOutcome !== null && (<p>Your adjusted TDEE based on your selected goal is: <strong>{tdeeWithDesiredOutcome.toFixed(2)} calories</strong></p>)}
                     </Card.Body>
                   </Card>
                 </Form>
