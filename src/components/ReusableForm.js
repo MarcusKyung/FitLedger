@@ -174,7 +174,6 @@ function ReusableForm(props) {
                   <option value="9">9 - Excellent: Near-perfect sleep, waking up feeling exceptionally rested.</option>
                   <option value="10">10 - Outstanding: The best sleep possible, waking up feeling completely revitalized and ready to take on the day.</option>
                 </Form.Select>
-
               </Form.Group>
             </Col>
             <Col md={4}>

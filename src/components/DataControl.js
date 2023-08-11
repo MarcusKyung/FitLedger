@@ -235,7 +235,7 @@ function DataControl() {
           <Card>
             <Form onSubmit={handleSearch}>
               <Form.Group controlId="searchDate">
-                <Form.Control placeholder="Search Entries: Date (YYYY-MM-DD) + Enter" type="text" value={searchDate} onChange={handleDateChange} />
+                <Form.Control placeholder="Search Entries: Date (YYYY-MM-DD)" type="text" value={searchDate} onChange={handleDateChange} />
               </Form.Group>
             </Form>
           </Card>
