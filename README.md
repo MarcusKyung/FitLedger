@@ -1,22 +1,22 @@
-# _Epicodus Capstone_
+# _Fit-Ledger_
 
 <div align="center">
     <!-- Project Shields -->
     <div align="center">
-        <a href="https://github.com/MarcusKyung/capstone/graphs/contributors">
-            <img src="https://img.shields.io/github/contributors/MarcusKyung/capstone.svg?style=plastic">
+        <a href="https://github.com/MarcusKyung/fit-ledger/graphs/contributors">
+            <img src="https://img.shields.io/github/contributors/MarcusKyung/fit-ledger.svg?style=plastic">
         </a>
         ¨
-        <a href="https://github.com/MarcusKyung/capstone/stargazers">
-            <img src="https://img.shields.io/github/stars/MarcusKyung/capstone.svg?color=yellow&style=plastic">
+        <a href="https://github.com/MarcusKyung/fit-ledger/stargazers">
+            <img src="https://img.shields.io/github/stars/MarcusKyung/fit-ledger.svg?color=yellow&style=plastic">
         </a>
         ¨
-        <a href="https://github.com/MarcusKyung/capstone/issues">
-            <img src="https://img.shields.io/github/issues/MarcusKyung/capstone?style=plastic">
+        <a href="https://github.com/MarcusKyung/fit-ledger/issues">
+            <img src="https://img.shields.io/github/issues/MarcusKyung/fit-ledger?style=plastic">
         </a>
         ¨
-        <a href="https://github.com/MarcusKyung/capstone/blob/main/license.txt">
-            <img src="https://img.shields.io/github/license/MarcusKyung/capstone?color=orange&style=plastic">
+        <a href="https://github.com/MarcusKyung/fit-ledger/blob/main/license.txt">
+            <img src="https://img.shields.io/github/license/MarcusKyung/fit-ledger?color=orange&style=plastic">
         </a>
         ¨
         <a href="https://linkedin.com/in/MarcusKyung">
@@ -68,7 +68,7 @@ Project Description Here
 5. Run `npm install` to install the dependencies needed for this project.
 6. Run `npm start` to start up the program locally.
 
-1. To view the deployed version of this program navigate the live site at: https://capstone-ec28e.web.app/
+1. To view the deployed version of this program navigate the live site at: https://fit-ledger.web.app/
 2. Click "Sign In" in the top right corner of the page to create an account, log in, and view your dashboard.
 ## Research and Planning Log:
 

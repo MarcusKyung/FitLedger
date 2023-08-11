@@ -1,6 +1,6 @@
 ### Name of Student: Marcus Kyung
 
-### Name of Project: Capstone, Name TBD
+### Name of Project: Fit-Ledger
 
 ### Project's Purpose or Goal: 
 - Allow users to have a single source of truth for their health and fitness data.

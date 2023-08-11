@@ -9,7 +9,7 @@ function Header(props) {
     <React.Fragment>
       <Navbar expand="lg" className="bg-body-tertiary">
         <Container>
-          <Navbar.Brand><img alt="FitLedger dumbbell logo" src={Logo50} width="30" height="30" className="d-inline-block align-top"/>{' '}FitLedger</Navbar.Brand>
+          <Navbar.Brand><img alt="Fit-Ledger dumbbell logo" src={Logo50} width="30" height="30" className="d-inline-block align-top"/>{' '}Fit-Ledger</Navbar.Brand>
             <Nav className="ms-auto">
             <Navbar.Text className="ml-3">
               {props.currentUser ? (`Currently Signed in as: ${props.currentUser.email}`) : ("Not Signed in")}
