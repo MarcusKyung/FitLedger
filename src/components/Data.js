@@ -39,8 +39,7 @@ function Data(props){
                     { x: "Carbs", y: props.totalCarbs },
                     { x: "Fats", y: props.totalFats }
                   ]}
-                  colorScale={["#2d6efd", "#81b4fe", "#dee2e6"]}
-                />
+                  colorScale={["#2d6efd", "#81b4fe", "#dee2e6"]}/>
               </div>
             </Col>
           </Row>

@@ -70,13 +70,13 @@ export default function DataDetails(props) {
                   <VictoryPie
                     height={300}
                     labelRadius={({ innerRadius }) => innerRadius + 40} 
-                    labels={({ datum }) => `${datum.x}\n${datum.y}`} 
+                    labels={({ datum }) => `${datum.x}\n${datum.y} g`} 
                     data={[
                       { x: "Meal 1", y: data.meal1Calories },
                       { x: "Meal 2", y: data.meal2Calories },
                       { x: "Meal 3", y: data.meal3Calories }
                     ]}
-                    colorScale={["tomato", "gold", "grey"]}/>
+                    colorScale={["#2d6efd", "#81b4fe", "#dee2e6"]}/>
                   </Accordion.Body>
                 </Accordion.Item>
               </Accordion>
@@ -139,9 +139,9 @@ export default function DataDetails(props) {
                   <Accordion.Item eventKey="5">
                     <Accordion.Header>Cardio: {data.cardioName}</Accordion.Header>
                     <Accordion.Body>
-                      <p>{data.cardioDuration} Minutes</p>
-                      <p>{data.cardioDistance} mi</p>
-                      <p>{data.cardioNotes}</p>
+                      <p>Duration: {data.cardioDuration} Minutes</p>
+                      <p>Distance: {data.cardioDistance} mi</p>
+                      <p>Notes: {data.cardioNotes}</p>
                     </Accordion.Body>
                   </Accordion.Item>
                 </Accordion>
