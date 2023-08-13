@@ -6,6 +6,27 @@ import MacrobreakdownChart from './MacrobreakdownChart';
 import TotalCaloriesChart from './TotalCaloriesChart';
 import CardioBubbleChart from './CardioBubbleChart';
 import SleepRatingChart from './SleepRatingChart';
+import styled from 'styled-components';
+
+
+const FullscreenModal = styled(Modal)`
+  .modal-dialog {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    height: 100%;
+    max-height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+`;
+
 
 export default function Victory() {
   const [showWeightChart, setShowWeightChart] = useState(false);
@@ -53,7 +74,7 @@ export default function Victory() {
       </Container>
 
 
-      <Modal        dialogClassName="modal-90w" show={showWeightChart} onHide={handleClose}>
+      <FullscreenModal show={showWeightChart} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>7/14 Day Daily Weight Chart</Modal.Title>
         </Modal.Header>
@@ -63,9 +84,9 @@ export default function Victory() {
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>Close</Button>
         </Modal.Footer>
-      </Modal>
+      </FullscreenModal>
 
-      <Modal show={showWaterIntakeChart} onHide={handleClose}>
+      <FullscreenModal show={showWaterIntakeChart} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>7/14 Day Daily Water Intake</Modal.Title>
         </Modal.Header>
@@ -75,9 +96,9 @@ export default function Victory() {
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>Close</Button>
         </Modal.Footer>
-      </Modal>
+      </FullscreenModal>
 
-      <Modal show={showMacrobreakdownChart} onHide={handleClose}>
+      <FullscreenModal show={showMacrobreakdownChart} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>7/14 Day Macronutrient Breakdown Chart</Modal.Title>
         </Modal.Header>
@@ -87,9 +108,9 @@ export default function Victory() {
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>Close</Button>
         </Modal.Footer>
-      </Modal>
+      </FullscreenModal>
 
-      <Modal show={showTotalCaloriesChart} onHide={handleClose}>
+      <FullscreenModal show={showTotalCaloriesChart} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>7/14 Day Total Caloric Intake Chart</Modal.Title>
         </Modal.Header>
@@ -99,9 +120,9 @@ export default function Victory() {
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>Close</Button>
         </Modal.Footer>
-      </Modal>
+      </FullscreenModal>
 
-      <Modal show={showCardioBubbleChart} onHide={handleClose}>
+      <FullscreenModal show={showCardioBubbleChart} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>7/14 Day Cardio Distance/Duration Chart</Modal.Title>
         </Modal.Header>
@@ -111,9 +132,9 @@ export default function Victory() {
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>Close</Button>
         </Modal.Footer>
-      </Modal>
+      </FullscreenModal>
 
-      <Modal show={showSleepRatingChart} onHide={handleClose}>
+      <FullscreenModal show={showSleepRatingChart} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>7/14 Day Sleep Rating Chart</Modal.Title>
         </Modal.Header>
@@ -123,7 +144,7 @@ export default function Victory() {
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>Close</Button>
         </Modal.Footer>
-      </Modal>
+      </FullscreenModal>
 
     </React.Fragment>
   );
