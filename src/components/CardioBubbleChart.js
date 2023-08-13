@@ -59,7 +59,7 @@ export default function CardioBubbleChart() {
               <VictoryChart width={800} domainPadding={50} theme={VictoryTheme.material} >
                 <VictoryAxis tickValues={cardioData.map((data) => data.entryDate)} tickFormat={(date) => formatDate(date)} />
                 <VictoryAxis dependentAxis tickFormat={(x) => `${x} min`} />
-                <VictoryScatter data={cardioData} x="entryDate" y="cardioDuration" size={({ datum }) => datum.cardioDistance * 5} />
+                <VictoryScatter data={cardioData} x="entryDate" y="cardioDuration" size={({ datum }) => datum.cardioDistance * 3} />
               </VictoryChart>
             )}
           </div>
