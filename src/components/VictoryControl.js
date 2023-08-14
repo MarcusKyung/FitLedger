@@ -7,6 +7,7 @@ import TotalCaloriesChart from './TotalCaloriesChart';
 import CardioBubbleChart from './CardioBubbleChart';
 import SleepRatingChart from './SleepRatingChart';
 import styled from 'styled-components';
+import { FaRunning, FaUtensils, FaChartPie, FaWeight, FaWater, FaBed } from 'react-icons/fa';
 
 
 const FullscreenModal = styled(Modal)`
@@ -58,16 +59,16 @@ export default function Victory() {
         <Row>
           <Col>
             <Row>
-              <Button variant="primary" onClick={handleWeightChartShow}>Daily Weight Chart</Button>
-              <Button variant="primary" onClick={handleWaterIntakeChartShow}>Water Intake Chart</Button>
-              <Button variant="primary" onClick={handleMacrobreakdownChartShow}>Daily Macros Chart</Button>
+              <Button variant="primary" onClick={handleWeightChartShow}>Daily Weight Chart | <FaWeight /></Button>
+              <Button variant="primary" onClick={handleWaterIntakeChartShow}>Water Intake Chart | <FaWater /></Button>
+              <Button variant="primary" onClick={handleMacrobreakdownChartShow}>Daily Macros Chart | <FaChartPie /></Button>
             </Row>
           </Col>
           <Col>
             <Row>
-              <Button variant="primary" onClick={handleTotalCaloriesChartShow}>Total Calories Chart</Button>
-              <Button variant="primary" onClick={handleCardioBubbleChartShow}>Daily Cardio Chart</Button>
-              <Button variant="primary" onClick={handleSleepRatingChartShow}>Sleep Rating Chart</Button>
+              <Button variant="primary" onClick={handleTotalCaloriesChartShow}>Total Calories Chart | <FaUtensils /></Button>
+              <Button variant="primary" onClick={handleCardioBubbleChartShow}>Daily Cardio Chart | <FaRunning /></Button>
+              <Button variant="primary" onClick={handleSleepRatingChartShow}>Sleep Rating Chart | <FaBed /></Button>
             </Row>
           </Col>
         </Row>
