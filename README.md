@@ -3,20 +3,20 @@
 <div align="center">
     <!-- Project Shields -->
     <div align="center">
-        <a href="https://github.com/MarcusKyung/fit-ledger/graphs/contributors">
-            <img src="https://img.shields.io/github/contributors/MarcusKyung/fit-ledger.svg?style=plastic">
+        <a href="https://github.com/MarcusKyung/FitLedger/graphs/contributors">
+            <img src="https://img.shields.io/github/contributors/MarcusKyung/FitLedger.svg?style=plastic">
         </a>
         ¨
-        <a href="https://github.com/MarcusKyung/fit-ledger/stargazers">
-            <img src="https://img.shields.io/github/stars/MarcusKyung/fit-ledger.svg?color=yellow&style=plastic">
+        <a href="https://github.com/MarcusKyung/FitLedger/stargazers">
+            <img src="https://img.shields.io/github/stars/MarcusKyung/FitLedger.svg?color=yellow&style=plastic">
         </a>
         ¨
-        <a href="https://github.com/MarcusKyung/fit-ledger/issues">
-            <img src="https://img.shields.io/github/issues/MarcusKyung/fit-ledger?style=plastic">
+        <a href="https://github.com/MarcusKyung/FitLedger/issues">
+            <img src="https://img.shields.io/github/issues/MarcusKyung/FitLedger?style=plastic">
         </a>
         ¨
-        <a href="https://github.com/MarcusKyung/fit-ledger/blob/main/license.txt">
-            <img src="https://img.shields.io/github/license/MarcusKyung/fit-ledger?color=orange&style=plastic">
+        <a href="https://github.com/MarcusKyung/FitLedger/blob/main/license.txt">
+            <img src="https://img.shields.io/github/license/MarcusKyung/FitLedger?color=orange&style=plastic">
         </a>
         ¨
         <a href="https://linkedin.com/in/MarcusKyung">
@@ -98,3 +98,10 @@ _For questions, comments, or concerns please reach out at Kyungmj@gmail.com_
 ## MIT License:
 
 Copyright (c) [2023] [Marcus Kyung]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR\ A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
