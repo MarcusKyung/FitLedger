@@ -41,7 +41,7 @@ export default function TDEECalculator() {
           <Col xs={6}>
             <Card>
               <Card.Body>
-                <Card.Title>TDEE (Total Daily Energy Expenditure)</Card.Title>
+                <Card.Title>TDEE Calculator (Total Daily Energy Expenditure)</Card.Title>
                 <hr />
                 <Form id="tDEEInput" onSubmit={handleSubmit} style={{marginTop: "10px"}}>
                   <Form.Group controlId="tDEEInput">

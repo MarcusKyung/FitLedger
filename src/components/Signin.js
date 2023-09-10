@@ -63,7 +63,7 @@ function SignIn() {
       <Container>
       <Row>
         <Col>
-          <Card>
+          <Card style={{ marginTop: "10px"}}>
             <Card.Header><h1>Sign up</h1></Card.Header>
             <Card.Body>
               {signUpSuccess}
@@ -99,7 +99,7 @@ function SignIn() {
             </Card.Body>
           </Card>
           <br />
-          <Card>
+          <Card style={{ marginBottom: "10px"}}>
             <Card.Header><h1>Sign Out</h1></Card.Header>
             <Card.Body>
               {signOutSuccess}
