@@ -4,11 +4,19 @@ import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import Logo50 from '../img/Logo50.png';
 
 function Header(props) {
+
+    const linkStyle = {
+      textDecoration: "none", 
+      color: "inherit",
+    };
+
   return (
     <React.Fragment>
       <Navbar expand="lg" className="bg-body-tertiary">
         <Container>
-          <Navbar.Brand><img alt="Fit-Ledger dumbbell logo" src={Logo50} width="30" height="30" className="d-inline-block align-top"/>{' '}Fit-Ledger</Navbar.Brand>
+          <Link to="/" style={linkStyle}>
+            <Navbar.Brand><img alt="Fit-Ledger dumbbell logo" src={Logo50} width="30" height="30" className="d-inline-block align-top"/>{' '}Fit-Ledger</Navbar.Brand>
+          </Link>
           <Nav className="ms-auto">
             <NavDropdown title="Menu" id="basic-nav-dropdown">
               <NavDropdown.Item eventKey="1" as={Link} to="/about">About</NavDropdown.Item>
