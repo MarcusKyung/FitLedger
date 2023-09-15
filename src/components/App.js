@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { auth } from "../firebase";
 import TDEECalculator from "./TDEECalculator";
 import MaxRepCalculator from "./MaxRepCalculator";
-// import WorkoutBuilder from "./WorkoutBuilder";
+import WorkoutBuilder from "./WorkoutBuilder";
 import SignIn from './SignIn';
 import About from './About';
 
@@ -27,7 +27,7 @@ function App() {
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/tdee" element={<TDEECalculator />} />
         <Route path="/1rm" element={<MaxRepCalculator />} />
-        {/* <Route path="/workout-builder" element={<WorkoutBuilder />} /> */}
+        <Route path="/workout-builder" element={<WorkoutBuilder />} />
         <Route path="/about" element={<About />} />
         <Route path="/" element={<DataControl />} currentUser={currentUser}/>
       </Routes>
