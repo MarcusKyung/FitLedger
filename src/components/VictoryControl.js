@@ -59,21 +59,20 @@ export default function Victory() {
         <Row>
           <Col>
             <Row>
-              <Button variant="primary" onClick={handleWeightChartShow}>Daily Weight Chart | <FaWeight /></Button>
-              <Button variant="primary" onClick={handleWaterIntakeChartShow}>Water Intake Chart | <FaWater /></Button>
-              <Button variant="primary" onClick={handleMacrobreakdownChartShow}>Daily Macros Chart | <FaChartPie /></Button>
+              <Button variant="primary" style={{marginBottom: "1px", marginRight: "1px"}} onClick={handleWeightChartShow}>Daily Weight Chart | <FaWeight /></Button>
+              <Button variant="primary" style={{marginBottom: "1px", marginRight: "1px"}} onClick={handleWaterIntakeChartShow}>Water Intake Chart | <FaWater /></Button>
+              <Button variant="primary" style={{marginRight: "1px"}} onClick={handleMacrobreakdownChartShow}>Daily Macros Chart | <FaChartPie /></Button>
             </Row>
           </Col>
           <Col>
             <Row>
-              <Button variant="primary" onClick={handleTotalCaloriesChartShow}>Total Calories Chart | <FaUtensils /></Button>
-              <Button variant="primary" onClick={handleCardioBubbleChartShow}>Daily Cardio Chart | <FaRunning /></Button>
-              <Button variant="primary" onClick={handleSleepRatingChartShow}>Sleep Rating Chart | <FaBed /></Button>
+              <Button variant="primary" style={{marginBottom: "1px", marginLeft: "1px"}} onClick={handleTotalCaloriesChartShow}>Total Calories Chart | <FaUtensils /></Button>
+              <Button variant="primary" style={{marginBottom: "1px", marginLeft: "1px"}} onClick={handleCardioBubbleChartShow}>Daily Cardio Chart | <FaRunning /></Button>
+              <Button variant="primary" style={{marginLeft: "1px"}} onClick={handleSleepRatingChartShow}>Sleep Rating Chart | <FaBed /></Button>
             </Row>
           </Col>
         </Row>
       </Container>
-
 
       <FullscreenModal show={showWeightChart} onHide={handleClose}>
         <Modal.Header closeButton>
