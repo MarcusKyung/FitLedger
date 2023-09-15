@@ -92,7 +92,6 @@ Project Description Here
 - Responsiveness broken in navigation bar.
 
 ## Contact:
-
 _For questions, comments, or concerns please reach out at Kyungmj@gmail.com_
 
 ## MIT License:

@@ -22,7 +22,7 @@ function DataControl() {
     let queryRef;
   
     if (auth.currentUser !== null) { 
-      console.log(auth.currentUser.email);
+      // console.log(auth.currentUser.email);
       queryRef = query(collection(db, "data"), where("author", "==", auth.currentUser.email)); 
     } else {  
       queryRef = collection(db, "data");
