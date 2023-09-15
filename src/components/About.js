@@ -12,7 +12,7 @@ export default function About() {
             This project was created by Marcus Kyung as a capstone for the Epicodus full stack software engineering bootcamp. Fit-Ledger is a program designed to be a single source of truth for an athlete's health and fitness data. To use this application simply fill out the daily data entry form on the homepage. Data entries are stored in Google's Firestore Database and are accessible only to the user to which it belongs.
             <div style={{ marginTop: "10px" }} className="d-grid gap-2">
               <Button style={{ textDecoration: 'none' }}>
-                <a href="https://www.linkedin.com/in/marcuskyung/" target="_blank" rel="noreferrer" style={{ textDecoration: 'none', color: 'white', display: 'block', width: '100%', height: '100%' }}>View Source Code <FaGithub /></a>
+                <a href="https://github.com/MarcusKyung/FitLedger" target="_blank" rel="noreferrer" style={{ textDecoration: 'none', color: 'white', display: 'block', width: '100%', height: '100%' }}>View Source Code <FaGithub /></a>
               </Button>
             </div>
             </Accordion.Body>
@@ -35,7 +35,7 @@ export default function About() {
               Marcus Kyung is a software engineer and former project manager/marketing professional. He is a graduate of the University of San Diego and the full stack software development bootcamp at Epicodus. He is currently seeking a Portland, Oregon or remote full time software engineering position. 
               <div style={{ marginTop: "10px" }} className="d-grid gap-2">
                 <Button style={{ textDecoration: 'none' }}>
-                  <a href="https://github.com/MarcusKyung/FitLedger" target="_blank" rel="noreferrer" style={{ textDecoration: 'none', color: 'white', display: 'block', width: '100%', height: '100%' }}>Connect On LinkedIn <FaLinkedin /></a>
+                  <a href="https://www.linkedin.com/in/marcuskyung/" target="_blank" rel="noreferrer" style={{ textDecoration: 'none', color: 'white', display: 'block', width: '100%', height: '100%' }}>Connect On LinkedIn <FaLinkedin /></a>
                 </Button>
               </div>
             </Accordion.Body>
