@@ -58,7 +58,7 @@ export default function MacrobreakdownChart() {
       <Card>
         <Card.Body>
           <Row style={{ justifyContent: 'center', alignItems: 'center', marginBottom: '10px' }}>
-            <Switch onChange={handleToggle} checked={showFourteenDays} uncheckedIcon={false} checkedIcon={false} onColor="#007bff" />
+            <Switch name="7/14DayToggleSwitch" onChange={handleToggle} checked={showFourteenDays} uncheckedIcon={false} checkedIcon={false} onColor="#007bff" />
             <span>Show 14 Days</span>
           </Row>
           <div style={{ height: '50vh' }}>
