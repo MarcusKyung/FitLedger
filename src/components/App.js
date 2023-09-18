@@ -8,6 +8,7 @@ import MaxRepCalculator from "./MaxRepCalculator";
 import WorkoutBuilder from "./WorkoutBuilder";
 import SignIn from './SignIn';
 import About from './About';
+import Profile from './Profile';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -29,6 +30,7 @@ function App() {
         <Route path="/1rm" element={<MaxRepCalculator />} />
         <Route path="/workout-builder" element={<WorkoutBuilder />} />
         <Route path="/about" element={<About />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/" element={<DataControl />} currentUser={currentUser}/>
       </Routes>
     </Router>
