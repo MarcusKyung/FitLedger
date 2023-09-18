@@ -132,6 +132,7 @@ function NewDataForm(props){
 
   return (
     <React.Fragment>
+      <hr/>
       <ReusableForm 
         formSubmissionHandler={handleNewDataFormSubmission}
         buttonText="Submit Data Entry" />
