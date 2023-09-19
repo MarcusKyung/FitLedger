@@ -60,7 +60,7 @@ export default function DataDetails(props) {
                     <VictoryPie
                       height={300}
                       labelRadius={({ innerRadius }) => innerRadius + 40} 
-                      labels={({ datum }) => `${datum.x}\n${datum.y} g`} 
+                      labels={({ datum }) => `${datum.x}\n${datum.y} cals`} 
                       data={[
                         { x: "Meal 1", y: data.meal1Calories },
                         { x: "Meal 2", y: data.meal2Calories },
