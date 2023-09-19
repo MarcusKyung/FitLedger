@@ -32,7 +32,7 @@ export default function About() {
           <Accordion.Item eventKey="3">
             <Accordion.Header>About Marcus Kyung</Accordion.Header>
             <Accordion.Body>
-              Marcus Kyung is a software engineer and former project manager/marketing professional. He is a graduate of the University of San Diego and the full stack software development bootcamp at Epicodus. He is currently seeking a Portland, Oregon or remote full time software engineering position. 
+              Marcus Kyung is a software engineer and former project manager/marketing professional based out of Portland, Oregon. He is a graduate of the University of San Diego and the Epicodus full stack software development program. He is currently seeking a Portland or remote full time software engineering position. Connect with him on LinkedIn using the button below. 
               <div style={{ marginTop: "10px" }} className="d-grid gap-2">
                 <Button style={{ textDecoration: 'none' }}>
                   <a href="https://www.linkedin.com/in/marcuskyung/" target="_blank" rel="noreferrer" style={{ textDecoration: 'none', color: 'white', display: 'block', width: '100%', height: '100%' }}>Connect On LinkedIn <FaLinkedin /></a>
