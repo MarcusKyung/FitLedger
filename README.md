@@ -49,7 +49,7 @@
 
 ## Description:
 
-Project Description Here
+Born out of a need for a single source of truth for health and exercise data, this React.js web application serves as a repository for all of your health and wellness information. Users can create an account, log in, and view their dashboard. From there, they can add data to their daily log, view a running list of their past data entries, and see a variety of metrics visualized as a various charts. 
 
 ## Setup/Installation Requirements:
 
